@@ -150,6 +150,7 @@
 		E49268821539C63900A08051 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = E492687D1539C63900A08051 /* DDLog.m */; };
 		E49268831539C63900A08051 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E492687F1539C63900A08051 /* DDTTYLogger.m */; };
 		E492688B1539CA1F00A08051 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E492688A1539CA1F00A08051 /* RootViewController.m */; };
+		E492688D1539CCC400A08051 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = E492688C1539CCC400A08051 /* fps_images.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -456,6 +457,7 @@
 		E49268881539CA0A00A08051 /* TankWorldConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankWorldConfig.h; sourceTree = "<group>"; };
 		E49268891539CA1F00A08051 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E492688A1539CA1F00A08051 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		E492688C1539CCC400A08051 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -974,13 +976,13 @@
 		E492686C1539C63900A08051 /* Src */ = {
 			isa = PBXGroup;
 			children = (
-				E49268881539CA0A00A08051 /* TankWorldConfig.h */,
 				E492686D1539C63900A08051 /* Bussiness */,
 				E492686E1539C63900A08051 /* Communication */,
 				E492686F1539C63900A08051 /* DataAccess */,
 				E49268701539C63900A08051 /* Model */,
 				E49268711539C63900A08051 /* TankWorldAppDelegate.h */,
 				E49268721539C63900A08051 /* TankWorldAppDelegate.mm */,
+				E49268881539CA0A00A08051 /* TankWorldConfig.h */,
 				E49268731539C63900A08051 /* UI */,
 				E49268771539C63900A08051 /* Utils */,
 			);
@@ -1079,6 +1081,7 @@
 		E4F8C3EB1539C3AB006CF0F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E492688C1539CCC400A08051 /* fps_images.png */,
 			);
 			name = Images;
 			path = Resources/Images;
@@ -1143,6 +1146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E492688D1539CCC400A08051 /* fps_images.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,7 +3,7 @@
 //  test
 //
 //  Created by 学宝 陈 on 12-4-14.
-//  Copyright __MyCompanyName__ 2012年. All rights reserved.
+//  Copyright C—SOFT 2012年. All rights reserved.
 //
 
 //
