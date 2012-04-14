@@ -151,6 +151,12 @@
 		E49268831539C63900A08051 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E492687F1539C63900A08051 /* DDTTYLogger.m */; };
 		E492688B1539CA1F00A08051 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E492688A1539CA1F00A08051 /* RootViewController.m */; };
 		E492688D1539CCC400A08051 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = E492688C1539CCC400A08051 /* fps_images.png */; };
+		E49268901539DBF900A08051 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E492688F1539DBF900A08051 /* MainMenuScene.m */; };
+		E49268971539EBB100A08051 /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E49268961539EBB100A08051 /* MainGameScene.m */; };
+		E492689E1539EF8B00A08051 /* ControlMainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E492689D1539EF8B00A08051 /* ControlMainLayer.m */; };
+		E49268A11539EFA300A08051 /* MapMainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E49268A01539EFA300A08051 /* MapMainLayer.m */; };
+		E49268A41539EFB800A08051 /* SpriteMainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E49268A31539EFB800A08051 /* SpriteMainLayer.m */; };
+		E49268A61539F66300A08051 /* worldmap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E49268A51539F66300A08051 /* worldmap.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -458,6 +464,17 @@
 		E49268891539CA1F00A08051 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E492688A1539CA1F00A08051 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		E492688C1539CCC400A08051 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
+		E492688E1539DBF900A08051 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		E492688F1539DBF900A08051 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		E49268951539EBB100A08051 /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameScene.h; sourceTree = "<group>"; };
+		E49268961539EBB100A08051 /* MainGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameScene.m; sourceTree = "<group>"; };
+		E492689C1539EF8B00A08051 /* ControlMainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlMainLayer.h; sourceTree = "<group>"; };
+		E492689D1539EF8B00A08051 /* ControlMainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlMainLayer.m; sourceTree = "<group>"; };
+		E492689F1539EFA300A08051 /* MapMainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMainLayer.h; sourceTree = "<group>"; };
+		E49268A01539EFA300A08051 /* MapMainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMainLayer.m; sourceTree = "<group>"; };
+		E49268A21539EFB800A08051 /* SpriteMainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteMainLayer.h; sourceTree = "<group>"; };
+		E49268A31539EFB800A08051 /* SpriteMainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteMainLayer.m; sourceTree = "<group>"; };
+		E49268A51539F66300A08051 /* worldmap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = worldmap.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1032,6 +1049,9 @@
 		E49268741539C63900A08051 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				E49268981539ED5900A08051 /* Layer */,
+				E49268951539EBB100A08051 /* MainGameScene.h */,
+				E49268961539EBB100A08051 /* MainGameScene.m */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -1039,6 +1059,8 @@
 		E49268751539C63900A08051 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
+				E492688E1539DBF900A08051 /* MainMenuScene.h */,
+				E492688F1539DBF900A08051 /* MainMenuScene.m */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -1078,9 +1100,47 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		E49268981539ED5900A08051 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				E49268991539EF0400A08051 /* ControlLayer */,
+				E492689A1539EF0400A08051 /* MapLayer */,
+				E492689B1539EF0400A08051 /* SpriteLayer */,
+			);
+			path = Layer;
+			sourceTree = "<group>";
+		};
+		E49268991539EF0400A08051 /* ControlLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E492689C1539EF8B00A08051 /* ControlMainLayer.h */,
+				E492689D1539EF8B00A08051 /* ControlMainLayer.m */,
+			);
+			path = ControlLayer;
+			sourceTree = "<group>";
+		};
+		E492689A1539EF0400A08051 /* MapLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E492689F1539EFA300A08051 /* MapMainLayer.h */,
+				E49268A01539EFA300A08051 /* MapMainLayer.m */,
+			);
+			path = MapLayer;
+			sourceTree = "<group>";
+		};
+		E492689B1539EF0400A08051 /* SpriteLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E49268A21539EFB800A08051 /* SpriteMainLayer.h */,
+				E49268A31539EFB800A08051 /* SpriteMainLayer.m */,
+			);
+			path = SpriteLayer;
+			sourceTree = "<group>";
+		};
 		E4F8C3EB1539C3AB006CF0F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E49268A51539F66300A08051 /* worldmap.jpg */,
 				E492688C1539CCC400A08051 /* fps_images.png */,
 			);
 			name = Images;
@@ -1147,6 +1207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E492688D1539CCC400A08051 /* fps_images.png in Resources */,
+				E49268A61539F66300A08051 /* worldmap.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1292,6 +1353,11 @@
 				E49268821539C63900A08051 /* DDLog.m in Sources */,
 				E49268831539C63900A08051 /* DDTTYLogger.m in Sources */,
 				E492688B1539CA1F00A08051 /* RootViewController.m in Sources */,
+				E49268901539DBF900A08051 /* MainMenuScene.m in Sources */,
+				E49268971539EBB100A08051 /* MainGameScene.m in Sources */,
+				E492689E1539EF8B00A08051 /* ControlMainLayer.m in Sources */,
+				E49268A11539EFA300A08051 /* MapMainLayer.m in Sources */,
+				E49268A41539EFB800A08051 /* SpriteMainLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

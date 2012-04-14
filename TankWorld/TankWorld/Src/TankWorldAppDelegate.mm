@@ -11,6 +11,7 @@
 #import "TankWorldAppDelegate.h"
 #import "TankWorldConfig.h"
 #import "RootViewController.h"
+#import "MainMenuScene.h"
 
 @implementation TankWorldAppDelegate
 
@@ -110,7 +111,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	//[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] runWithScene: [MainMenuScene scene]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
