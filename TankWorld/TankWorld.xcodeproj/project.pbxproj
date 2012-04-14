@@ -15,15 +15,6 @@
 		E40112C31539560C002B5105 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40112C21539560C002B5105 /* UIKit.framework */; };
 		E40112C51539560C002B5105 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40112C41539560C002B5105 /* Foundation.framework */; };
 		E40112C71539560C002B5105 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40112C61539560C002B5105 /* CoreGraphics.framework */; };
-		E40112CB1539560C002B5105 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E40112CA1539560C002B5105 /* Default.png */; };
-		E40112CD1539560C002B5105 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = E40112CC1539560C002B5105 /* fps_images.png */; };
-		E40112CF1539560C002B5105 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E40112CE1539560C002B5105 /* Icon-72.png */; };
-		E40112D11539560C002B5105 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E40112D01539560C002B5105 /* Icon-Small-50.png */; };
-		E40112D31539560C002B5105 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E40112D21539560C002B5105 /* Icon-Small.png */; };
-		E40112D51539560C002B5105 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E40112D41539560C002B5105 /* Icon-Small@2x.png */; };
-		E40112D71539560C002B5105 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E40112D61539560C002B5105 /* Icon.png */; };
-		E40112D91539560C002B5105 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E40112D81539560C002B5105 /* Icon@2x.png */; };
-		E40112DC1539560C002B5105 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = E40112DB1539560C002B5105 /* iTunesArtwork */; };
 		E40112E11539560C002B5105 /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E40112E01539560C002B5105 /* CCAction.m */; };
 		E40112E41539560C002B5105 /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = E40112E31539560C002B5105 /* CCActionCamera.m */; };
 		E40112E71539560C002B5105 /* CCActionEase.m in Sources */ = {isa = PBXBuildFile; fileRef = E40112E61539560C002B5105 /* CCActionEase.m */; };
@@ -154,11 +145,11 @@
 		E40114831539560F002B5105 /* b2RevoluteJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40114821539560F002B5105 /* b2RevoluteJoint.cpp */; };
 		E40114861539560F002B5105 /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40114851539560F002B5105 /* b2WeldJoint.cpp */; };
 		E401148C1539560F002B5105 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E401148B1539560F002B5105 /* main.m */; };
-		E401148F1539560F002B5105 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E401148E1539560F002B5105 /* AppDelegate.mm */; };
-		E40114921539560F002B5105 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40114911539560F002B5105 /* RootViewController.m */; };
-		E40114951539560F002B5105 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40114941539560F002B5105 /* HelloWorldLayer.mm */; };
-		E40114981539560F002B5105 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40114971539560F002B5105 /* GLES-Render.mm */; };
-		E401149B1539560F002B5105 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E401149A1539560F002B5105 /* blocks.png */; };
+		E49268801539C63900A08051 /* TankWorldAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E49268721539C63900A08051 /* TankWorldAppDelegate.mm */; };
+		E49268811539C63900A08051 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E492687B1539C63900A08051 /* DDFileLogger.m */; };
+		E49268821539C63900A08051 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = E492687D1539C63900A08051 /* DDLog.m */; };
+		E49268831539C63900A08051 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E492687F1539C63900A08051 /* DDTTYLogger.m */; };
+		E492688B1539CA1F00A08051 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E492688A1539CA1F00A08051 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,16 +162,7 @@
 		E40112C21539560C002B5105 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E40112C41539560C002B5105 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E40112C61539560C002B5105 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E40112CA1539560C002B5105 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
-		E40112CC1539560C002B5105 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
-		E40112CE1539560C002B5105 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
-		E40112D01539560C002B5105 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
-		E40112D21539560C002B5105 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
-		E40112D41539560C002B5105 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
-		E40112D61539560C002B5105 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
-		E40112D81539560C002B5105 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		E40112DA1539560C002B5105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
-		E40112DB1539560C002B5105 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
 		E40112DF1539560C002B5105 /* CCAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAction.h; path = libs/cocos2d/CCAction.h; sourceTree = "<group>"; };
 		E40112E01539560C002B5105 /* CCAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCAction.m; path = libs/cocos2d/CCAction.m; sourceTree = "<group>"; };
 		E40112E21539560C002B5105 /* CCActionCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCActionCamera.h; path = libs/cocos2d/CCActionCamera.h; sourceTree = "<group>"; };
@@ -463,16 +445,17 @@
 		E40114881539560F002B5105 /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
 		E401148A1539560F002B5105 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		E401148B1539560F002B5105 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E401148D1539560F002B5105 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E401148E1539560F002B5105 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		E40114901539560F002B5105 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		E40114911539560F002B5105 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		E40114931539560F002B5105 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		E40114941539560F002B5105 /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
-		E40114961539560F002B5105 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
-		E40114971539560F002B5105 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
-		E40114991539560F002B5105 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		E401149A1539560F002B5105 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		E49268711539C63900A08051 /* TankWorldAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankWorldAppDelegate.h; sourceTree = "<group>"; };
+		E49268721539C63900A08051 /* TankWorldAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TankWorldAppDelegate.mm; sourceTree = "<group>"; };
+		E492687A1539C63900A08051 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		E492687B1539C63900A08051 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		E492687C1539C63900A08051 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		E492687D1539C63900A08051 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		E492687E1539C63900A08051 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		E492687F1539C63900A08051 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		E49268881539CA0A00A08051 /* TankWorldConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankWorldConfig.h; sourceTree = "<group>"; };
+		E49268891539CA1F00A08051 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		E492688A1539CA1F00A08051 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -529,15 +512,8 @@
 		E40112C81539560C002B5105 /* TankWorld */ = {
 			isa = PBXGroup;
 			children = (
-				E401148D1539560F002B5105 /* AppDelegate.h */,
-				E401148E1539560F002B5105 /* AppDelegate.mm */,
-				E40114901539560F002B5105 /* RootViewController.h */,
-				E40114911539560F002B5105 /* RootViewController.m */,
-				E40114931539560F002B5105 /* HelloWorldLayer.h */,
-				E40114941539560F002B5105 /* HelloWorldLayer.mm */,
-				E40114961539560F002B5105 /* GLES-Render.h */,
-				E40114971539560F002B5105 /* GLES-Render.mm */,
-				E40114991539560F002B5105 /* GameConfig.h */,
+				E492686C1539C63900A08051 /* Src */,
+				E49268781539C63900A08051 /* ThirdParty */,
 				E40112C91539560C002B5105 /* Resources */,
 				E40112DD1539560C002B5105 /* libs */,
 				E40114891539560F002B5105 /* Supporting Files */,
@@ -548,17 +524,9 @@
 		E40112C91539560C002B5105 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E40112CA1539560C002B5105 /* Default.png */,
-				E40112CC1539560C002B5105 /* fps_images.png */,
-				E40112CE1539560C002B5105 /* Icon-72.png */,
-				E40112D01539560C002B5105 /* Icon-Small-50.png */,
-				E40112D21539560C002B5105 /* Icon-Small.png */,
-				E40112D41539560C002B5105 /* Icon-Small@2x.png */,
-				E40112D61539560C002B5105 /* Icon.png */,
-				E40112D81539560C002B5105 /* Icon@2x.png */,
+				E4F8C3EB1539C3AB006CF0F7 /* Images */,
+				E4F8C3EC1539C3AB006CF0F7 /* Sound */,
 				E40112DA1539560C002B5105 /* Info.plist */,
-				E40112DB1539560C002B5105 /* iTunesArtwork */,
-				E401149A1539560F002B5105 /* blocks.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1003,6 +971,127 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E492686C1539C63900A08051 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				E49268881539CA0A00A08051 /* TankWorldConfig.h */,
+				E492686D1539C63900A08051 /* Bussiness */,
+				E492686E1539C63900A08051 /* Communication */,
+				E492686F1539C63900A08051 /* DataAccess */,
+				E49268701539C63900A08051 /* Model */,
+				E49268711539C63900A08051 /* TankWorldAppDelegate.h */,
+				E49268721539C63900A08051 /* TankWorldAppDelegate.mm */,
+				E49268731539C63900A08051 /* UI */,
+				E49268771539C63900A08051 /* Utils */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		E492686D1539C63900A08051 /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bussiness;
+			sourceTree = "<group>";
+		};
+		E492686E1539C63900A08051 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+		E492686F1539C63900A08051 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		E49268701539C63900A08051 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E49268731539C63900A08051 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E49268891539CA1F00A08051 /* RootViewController.h */,
+				E492688A1539CA1F00A08051 /* RootViewController.m */,
+				E49268741539C63900A08051 /* Games */,
+				E49268751539C63900A08051 /* Menus */,
+				E49268761539C63900A08051 /* Setting */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E49268741539C63900A08051 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		E49268751539C63900A08051 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Menus;
+			sourceTree = "<group>";
+		};
+		E49268761539C63900A08051 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		E49268771539C63900A08051 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E49268781539C63900A08051 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				E49268791539C63900A08051 /* Log */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		E49268791539C63900A08051 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				E492687A1539C63900A08051 /* DDFileLogger.h */,
+				E492687B1539C63900A08051 /* DDFileLogger.m */,
+				E492687C1539C63900A08051 /* DDLog.h */,
+				E492687D1539C63900A08051 /* DDLog.m */,
+				E492687E1539C63900A08051 /* DDTTYLogger.h */,
+				E492687F1539C63900A08051 /* DDTTYLogger.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		E4F8C3EB1539C3AB006CF0F7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		E4F8C3EC1539C3AB006CF0F7 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sound;
+			path = Resources/Sound;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1054,16 +1143,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E40112CB1539560C002B5105 /* Default.png in Resources */,
-				E40112CD1539560C002B5105 /* fps_images.png in Resources */,
-				E40112CF1539560C002B5105 /* Icon-72.png in Resources */,
-				E40112D11539560C002B5105 /* Icon-Small-50.png in Resources */,
-				E40112D31539560C002B5105 /* Icon-Small.png in Resources */,
-				E40112D51539560C002B5105 /* Icon-Small@2x.png in Resources */,
-				E40112D71539560C002B5105 /* Icon.png in Resources */,
-				E40112D91539560C002B5105 /* Icon@2x.png in Resources */,
-				E40112DC1539560C002B5105 /* iTunesArtwork in Resources */,
-				E401149B1539560F002B5105 /* blocks.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,10 +1283,11 @@
 				E40114831539560F002B5105 /* b2RevoluteJoint.cpp in Sources */,
 				E40114861539560F002B5105 /* b2WeldJoint.cpp in Sources */,
 				E401148C1539560F002B5105 /* main.m in Sources */,
-				E401148F1539560F002B5105 /* AppDelegate.mm in Sources */,
-				E40114921539560F002B5105 /* RootViewController.m in Sources */,
-				E40114951539560F002B5105 /* HelloWorldLayer.mm in Sources */,
-				E40114981539560F002B5105 /* GLES-Render.mm in Sources */,
+				E49268801539C63900A08051 /* TankWorldAppDelegate.mm in Sources */,
+				E49268811539C63900A08051 /* DDFileLogger.m in Sources */,
+				E49268821539C63900A08051 /* DDLog.m in Sources */,
+				E49268831539C63900A08051 /* DDTTYLogger.m in Sources */,
+				E492688B1539CA1F00A08051 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1229,7 +1309,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1244,7 +1324,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
@@ -1303,6 +1383,7 @@
 				E40114A01539560F002B5105 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

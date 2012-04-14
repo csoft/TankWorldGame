@@ -1,9 +1,9 @@
 //
 //  RootViewController.m
-//  TankWorld
+//  test
 //
 //  Created by 学宝 陈 on 12-4-14.
-//  Copyright C-SOFT 2012年. All rights reserved.
+//  Copyright __MyCompanyName__ 2012年. All rights reserved.
 //
 
 //
@@ -14,7 +14,7 @@
 #import "cocos2d.h"
 
 #import "RootViewController.h"
-#import "GameConfig.h"
+#import "TankWorldConfig.h"
 
 @implementation RootViewController
 
