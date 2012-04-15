@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface MapMainLayer : CCLayer {
+@interface MapMainLayer : CCLayer 
+{
+    
+    
+    
     
 }
 
