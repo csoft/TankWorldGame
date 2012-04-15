@@ -157,6 +157,8 @@
 		E49268A11539EFA300A08051 /* MapMainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E49268A01539EFA300A08051 /* MapMainLayer.m */; };
 		E49268A61539F66300A08051 /* worldmap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E49268A51539F66300A08051 /* worldmap.jpg */; };
 		E49E5AF4153AE10F0005E1C0 /* BarrelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AF3153AE10F0005E1C0 /* BarrelModel.m */; };
+		E49E5AF8153B329D0005E1C0 /* TankModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AF7153B329D0005E1C0 /* TankModelManager.m */; };
+		E49E5AFB153B3B030005E1C0 /* PlistFileEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */; };
 		E4FA8BE8153ACEF60096891D /* bullet.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BDF153ACEF60096891D /* bullet.PNG */; };
 		E4FA8BE9153ACEF60096891D /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BE0153ACEF60096891D /* enemy.png */; };
 		E4FA8BEA153ACEF60096891D /* exploBig.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BE1153ACEF60096891D /* exploBig.png */; };
@@ -487,6 +489,10 @@
 		E49268A51539F66300A08051 /* worldmap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = worldmap.jpg; sourceTree = "<group>"; };
 		E49E5AF2153AE10F0005E1C0 /* BarrelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrelModel.h; sourceTree = "<group>"; };
 		E49E5AF3153AE10F0005E1C0 /* BarrelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrelModel.m; sourceTree = "<group>"; };
+		E49E5AF6153B329D0005E1C0 /* TankModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankModelManager.h; sourceTree = "<group>"; };
+		E49E5AF7153B329D0005E1C0 /* TankModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankModelManager.m; sourceTree = "<group>"; };
+		E49E5AF9153B3B030005E1C0 /* PlistFileEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistFileEngine.h; sourceTree = "<group>"; };
+		E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistFileEngine.m; sourceTree = "<group>"; };
 		E4FA8BDF153ACEF60096891D /* bullet.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.PNG; sourceTree = "<group>"; };
 		E4FA8BE0153ACEF60096891D /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
 		E4FA8BE1153ACEF60096891D /* exploBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exploBig.png; sourceTree = "<group>"; };
@@ -1038,6 +1044,8 @@
 		E492686D1539C63900A08051 /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
+				E49E5AF6153B329D0005E1C0 /* TankModelManager.h */,
+				E49E5AF7153B329D0005E1C0 /* TankModelManager.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1052,6 +1060,8 @@
 		E492686F1539C63900A08051 /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
+				E49E5AF9153B3B030005E1C0 /* PlistFileEngine.h */,
+				E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -1424,6 +1434,8 @@
 				E4FA8BFF153AD3950096891D /* BulletModel.m in Sources */,
 				E4FA8C02153AD3C50096891D /* RadarModel.m in Sources */,
 				E49E5AF4153AE10F0005E1C0 /* BarrelModel.m in Sources */,
+				E49E5AF8153B329D0005E1C0 /* TankModelManager.m in Sources */,
+				E49E5AFB153B3B030005E1C0 /* PlistFileEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

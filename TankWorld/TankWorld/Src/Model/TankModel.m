@@ -27,10 +27,6 @@
 @synthesize lifeValue = _lifeValue;
 @synthesize fieldOfView=_fieldOfView;
 
-- (id)initWithTankType:(TankModelType) tankType
-{
-    
-}
 
 
 

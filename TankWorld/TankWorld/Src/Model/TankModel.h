@@ -34,7 +34,7 @@
     
     CGFloat         _moveSpeed;//此坦克移动的速度
     
-    CGFloat         _turnSpeed;//此坦克转动的速度
+    CGFloat         _turnSpeed;//此坦克转动的速度,角度
     
     CGFloat         _lifeValue;//此坦克的生命值
     
@@ -56,7 +56,5 @@
 @property(nonatomic,assign)CGFloat          fieldOfView;
 
 
-
-- (id)initWithTankType:(TankModelType) tankType;
 
 @end
