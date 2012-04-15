@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface RadarModel : NSObject
+{
+    CGFloat         _fieldOfView;//此雷达的可视范围半径，以所属的坦克为圆中心点
+    
+}
+@property(nonatomic,assign)CGFloat         fieldOfView;
 
 @end

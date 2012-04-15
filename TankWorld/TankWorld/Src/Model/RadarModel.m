@@ -9,5 +9,5 @@
 #import "RadarModel.h"
 
 @implementation RadarModel
-
+@synthesize fieldOfView=_fieldOfView;
 @end

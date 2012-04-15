@@ -10,5 +10,8 @@
 
 //坦克的炮筒
 @implementation BarrelModel
+@synthesize angle=_angle;
+@synthesize turnSpeed=_turnSpeed;
+
 
 @end

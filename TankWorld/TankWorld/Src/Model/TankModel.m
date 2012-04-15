@@ -14,14 +14,18 @@
 @implementation TankModel
 
 @synthesize tankType=_tankType;
+@synthesize name=_name;
 @synthesize groupID=_groupID;
 @synthesize bullet=_bullet;
 @synthesize radar=_radar;
 @synthesize barrel=_barrel;
 @synthesize position=_position;
+@synthesize angle = _angle;
 @synthesize moveSpeed=_moveSpeed;
-@synthesize turnSeed=_turnSeed;
+@synthesize tankSize=_tankSize;
+@synthesize turnSpeed=_turnSpeed;
 @synthesize lifeValue = _lifeValue;
+@synthesize fieldOfView=_fieldOfView;
 
 - (id)initWithTankType:(TankModelType) tankType
 {

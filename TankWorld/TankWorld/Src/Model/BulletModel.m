@@ -9,5 +9,12 @@
 #import "BulletModel.h"
 
 @implementation BulletModel
+@synthesize harmValue=_harmValue;
+@synthesize liftValue=_liftValue;
+@synthesize position=_position;
+@synthesize angle=_angle;
+@synthesize moveSpeed=_moveSpeed;
+@synthesize bulletSize=_bulletSize;
+
 
 @end
