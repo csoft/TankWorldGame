@@ -9,6 +9,7 @@
 #import "TankModel.h"
 #import "BulletModel.h"
 #import "RadarModel.h"
+#import "BarrelModel.h"
 
 @implementation TankModel
 
@@ -16,6 +17,7 @@
 @synthesize groupID=_groupID;
 @synthesize bullet=_bullet;
 @synthesize radar=_radar;
+@synthesize barrel=_barrel;
 @synthesize position=_position;
 @synthesize moveSpeed=_moveSpeed;
 @synthesize turnSeed=_turnSeed;

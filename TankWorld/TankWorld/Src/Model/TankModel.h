@@ -11,6 +11,7 @@
 
 @class BulletModel;
 @class RadarModel;
+@class BarrelModel;
 @interface TankModel : NSObject
 {
     TankModelType   _tankType;//此坦克的类型，这个字段非常重要，因为要根据类型，去数据库中读出炮弹，雷达，移动速度，转动速度等固定的数据
@@ -20,6 +21,8 @@
     BulletModel * _bullet;//炮弹，一辆坦克发射炮弹，只能一个炮弹消失后才能发第二个，所以不是数组
     
     RadarModel * _radar;//此坦克的雷达
+    
+    BarrelModel * _barrel;//此坦克的炮筒
     
     CGPoint    _position;//此坦克现在在地图上的坐标
     
@@ -34,6 +37,7 @@
 @property(nonatomic,assign)NSUInteger      groupID;
 @property(nonatomic,retain)BulletModel *   bullet;
 @property(nonatomic,retain)RadarModel *    radar;
+@property(nonatomic,retain)BarrelModel *   barrel;
 @property(nonatomic,assign)CGPoint      position;
 @property(nonatomic,assign)CGFloat      moveSpeed;
 @property(nonatomic,assign)CGFloat      turnSeed;
