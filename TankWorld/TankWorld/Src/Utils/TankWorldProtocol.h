@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "TankWorldTypeDef.h"
+
+
+
 @protocol MapMainLayerDelegate <NSObject>
 
 //坦克根据指定角度移动，移动成功返回YES，失败NO

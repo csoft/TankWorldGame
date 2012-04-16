@@ -25,32 +25,24 @@
     return mainScene;
 }
 
-- (void) addMapLayer
+- (void) addLayer
 {
     MapMainLayer * mmlayer = [MapMainLayer node];
     [self addChild:mmlayer];
-}
-
-//- (void) addSpriteLayer
-//{
-//    SpriteMainLayer * smlayer= [SpriteMainLayer node];
-//    [self addChild:smlayer];
-//}
-
-- (void) addControlLayer
-{
+    
     ControlMainLayer * cmLayer = [ControlMainLayer node];
     [self addChild: cmLayer];
+    
 }
+
+
 
 
 - (id) init
 {
     if(self = [super init])
     {
-        [self addMapLayer];
-        //[self addSpriteLayer];
-        [self addControlLayer];
+        [self addLayer];
     }
     return self;
 }

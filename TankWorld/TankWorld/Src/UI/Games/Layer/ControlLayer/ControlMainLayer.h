@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "TankWorldProtocol.h"
 
-@interface ControlMainLayer : CCLayer {
+@interface ControlMainLayer : CCLayer 
+{
+    
+    id<MapMainLayerDelegate>        _mapMainLayerDelegate;//地图层委托，用来回调坦克移动和发射炮弹
     
 }
+@property(nonatomic,assign)id<MapMainLayerDelegate>         mapMainLayerDelegate;
+
 
 @end

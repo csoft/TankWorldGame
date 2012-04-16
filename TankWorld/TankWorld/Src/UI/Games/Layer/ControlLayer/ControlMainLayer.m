@@ -10,5 +10,7 @@
 
 
 @implementation ControlMainLayer
+@synthesize mapMainLayerDelegate = _mapMainLayerDelegate;
+
 
 @end
