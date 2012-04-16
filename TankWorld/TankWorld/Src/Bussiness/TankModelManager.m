@@ -78,8 +78,8 @@
 }
 
 
-//判断指定的坦克是否能往左移动
-- (BOOL) canMoveLeftForTankModel:(TankModel *)aTankModel
+//判断指定的坦克是否能按指定角度移动
+- (BOOL) canMoveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle
 {
     return YES;
 }
@@ -87,68 +87,12 @@
 
 
 
-//判断指定的坦克是否能否往右移动
-- (BOOL) canMoveRightForTankModel:(TankModel *)aTankModel
+//让指定的坦克按指定角度移动，此函数内部会判断是否能移动，移动的话返回YES，否则NO
+- (BOOL) moveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle
 {
     return YES;
 }
 
-
-
-
-
-//判断指定的坦克是否能否往上移动
-- (BOOL) canMoveUpForTankModel:(TankModel *)aTankModel
-{
-    return YES;
-}
-
-
-
-
-
-//判断指定的坦克是否能否往下移动
-- (BOOL) canMoveDownForTankModel:(TankModel *)aTankModel
-{
-    return YES;
-}
-
-
-
-
-
-
-//指定的坦克是否能往左移动
-- (BOOL) moveToLeftForTankModel:(TankModel *)aTankModel
-{
-    return YES;
-}
-
-
-
-//指定的坦克是否能否往右移动
-- (BOOL) moveToRightForTankModel:(TankModel *)aTankModel
-{
-    return YES;
-}
-
-
-
-
-//指定的坦克是否能否往上移动
-- (BOOL) moveToUpForTankModel:(TankModel *)aTankModel
-{
-    return YES;
-}
-
-
-
-
-//指定的坦克是否能否往下移动
-- (BOOL) moveToDownForTankModel:(TankModel *)aTankModel
-{
-    return YES;
-}
 
 
 
