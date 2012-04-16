@@ -145,6 +145,10 @@
 		E40114831539560F002B5105 /* b2RevoluteJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40114821539560F002B5105 /* b2RevoluteJoint.cpp */; };
 		E40114861539560F002B5105 /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40114851539560F002B5105 /* b2WeldJoint.cpp */; };
 		E401148C1539560F002B5105 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E401148B1539560F002B5105 /* main.m */; };
+		E46CFE83153C773C00B09E39 /* TankSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E46CFE82153C773C00B09E39 /* TankSprite.m */; };
+		E46CFE86153C775800B09E39 /* BulletSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E46CFE85153C775800B09E39 /* BulletSprite.m */; };
+		E46CFE89153C776E00B09E39 /* RadarSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E46CFE88153C776E00B09E39 /* RadarSprite.m */; };
+		E46CFE8C153C778400B09E39 /* BarrelSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E46CFE8B153C778400B09E39 /* BarrelSprite.m */; };
 		E49268801539C63900A08051 /* TankWorldAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E49268721539C63900A08051 /* TankWorldAppDelegate.mm */; };
 		E49268811539C63900A08051 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E492687B1539C63900A08051 /* DDFileLogger.m */; };
 		E49268821539C63900A08051 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = E492687D1539C63900A08051 /* DDLog.m */; };
@@ -466,6 +470,15 @@
 		E40114881539560F002B5105 /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
 		E401148A1539560F002B5105 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		E401148B1539560F002B5105 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E46CFE81153C773C00B09E39 /* TankSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankSprite.h; sourceTree = "<group>"; };
+		E46CFE82153C773C00B09E39 /* TankSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankSprite.m; sourceTree = "<group>"; };
+		E46CFE84153C775800B09E39 /* BulletSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletSprite.h; sourceTree = "<group>"; };
+		E46CFE85153C775800B09E39 /* BulletSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletSprite.m; sourceTree = "<group>"; };
+		E46CFE87153C776E00B09E39 /* RadarSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarSprite.h; sourceTree = "<group>"; };
+		E46CFE88153C776E00B09E39 /* RadarSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarSprite.m; sourceTree = "<group>"; };
+		E46CFE8A153C778400B09E39 /* BarrelSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrelSprite.h; sourceTree = "<group>"; };
+		E46CFE8B153C778400B09E39 /* BarrelSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrelSprite.m; sourceTree = "<group>"; };
+		E46CFE8D153C7E6800B09E39 /* TankWorldProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankWorldProtocol.h; sourceTree = "<group>"; };
 		E49268711539C63900A08051 /* TankWorldAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankWorldAppDelegate.h; sourceTree = "<group>"; };
 		E49268721539C63900A08051 /* TankWorldAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TankWorldAppDelegate.mm; sourceTree = "<group>"; };
 		E492687A1539C63900A08051 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
@@ -1025,6 +1038,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E46CFE7F153C770A00B09E39 /* Sprite */ = {
+			isa = PBXGroup;
+			children = (
+				E46CFE81153C773C00B09E39 /* TankSprite.h */,
+				E46CFE82153C773C00B09E39 /* TankSprite.m */,
+				E46CFE84153C775800B09E39 /* BulletSprite.h */,
+				E46CFE85153C775800B09E39 /* BulletSprite.m */,
+				E46CFE87153C776E00B09E39 /* RadarSprite.h */,
+				E46CFE88153C776E00B09E39 /* RadarSprite.m */,
+				E46CFE8A153C778400B09E39 /* BarrelSprite.h */,
+				E46CFE8B153C778400B09E39 /* BarrelSprite.m */,
+			);
+			path = Sprite;
+			sourceTree = "<group>";
+		};
 		E492686C1539C63900A08051 /* Src */ = {
 			isa = PBXGroup;
 			children = (
@@ -1123,6 +1151,7 @@
 			isa = PBXGroup;
 			children = (
 				E4FA8C03153AD49C0096891D /* TankWorldTypeDef.h */,
+				E46CFE8D153C7E6800B09E39 /* TankWorldProtocol.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1169,6 +1198,7 @@
 		E492689A1539EF0400A08051 /* MapLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E46CFE7F153C770A00B09E39 /* Sprite */,
 				E492689F1539EFA300A08051 /* MapMainLayer.h */,
 				E49268A01539EFA300A08051 /* MapMainLayer.m */,
 			);
@@ -1426,6 +1456,10 @@
 				E49E5AF4153AE10F0005E1C0 /* BarrelModel.m in Sources */,
 				E49E5AF8153B329D0005E1C0 /* TankModelManager.m in Sources */,
 				E49E5AFB153B3B030005E1C0 /* PlistFileEngine.m in Sources */,
+				E46CFE83153C773C00B09E39 /* TankSprite.m in Sources */,
+				E46CFE86153C775800B09E39 /* BulletSprite.m in Sources */,
+				E46CFE89153C776E00B09E39 /* RadarSprite.m in Sources */,
+				E46CFE8C153C778400B09E39 /* BarrelSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

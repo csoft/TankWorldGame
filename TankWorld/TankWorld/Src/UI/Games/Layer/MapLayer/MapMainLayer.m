@@ -7,6 +7,7 @@
 //
 
 #import "MapMainLayer.h"
+#import "TankWorldTypeDef.h"
 
 
 @implementation MapMainLayer
@@ -21,5 +22,34 @@
     }
     return self;
 }
+
+
+
+
+
+
+
+
+#pragma -
+#pragma MapMainLayerDelegate
+
+//坦克根据指定角度移动，移动成功返回YES，失败NO
+- (BOOL) tankMoveWithAngle:(CGFloat) angle
+{
+    return YES;
+}
+
+
+//坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足
+- (BOOL) tankFireWithTankFireType:(TankFireType) fireType
+{
+    return YES;
+}
+
+
+
+
+
+
 
 @end
