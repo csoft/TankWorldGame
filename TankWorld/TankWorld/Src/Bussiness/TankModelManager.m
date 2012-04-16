@@ -78,4 +78,79 @@
 }
 
 
+//判断指定的坦克是否能往左移动
+- (BOOL) canMoveLeftForTankModel:(TankModel *)aTankModel
+{
+    return YES;
+}
+
+
+
+
+//判断指定的坦克是否能否往右移动
+- (BOOL) canMoveRightForTankModel:(TankModel *)aTankModel
+{
+    return YES;
+}
+
+
+
+
+
+//判断指定的坦克是否能否往上移动
+- (BOOL) canMoveUpForTankModel:(TankModel *)aTankModel
+{
+    return YES;
+}
+
+
+
+
+
+//判断指定的坦克是否能否往下移动
+- (BOOL) canMoveDownForTankModel:(TankModel *)aTankModel
+{
+    return YES;
+}
+
+
+
+
+
+
+//指定的坦克是否能往左移动
+- (BOOL) moveToLeftForTankModel:(TankModel *)aTankModel
+{
+    return YES;
+}
+
+
+
+//指定的坦克是否能否往右移动
+- (BOOL) moveToRightForTankModel:(TankModel *)aTankModel
+{
+    return YES;
+}
+
+
+
+
+//指定的坦克是否能否往上移动
+- (BOOL) moveToUpForTankModel:(TankModel *)aTankModel
+{
+    return YES;
+}
+
+
+
+
+//指定的坦克是否能否往下移动
+- (BOOL) moveToDownForTankModel:(TankModel *)aTankModel
+{
+    return YES;
+}
+
+
+
+
 @end
