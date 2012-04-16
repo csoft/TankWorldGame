@@ -9,7 +9,7 @@
 #import "MainGameScene.h"
 #import "ControlMainLayer.h"
 #import "MapMainLayer.h"
-#import "SpriteMainLayer.h"
+//#import "SpriteMainLayer.h"
 
 
 @implementation MainGameScene
@@ -31,11 +31,11 @@
     [self addChild:mmlayer];
 }
 
-- (void) addSpriteLayer
-{
-    SpriteMainLayer * smlayer= [SpriteMainLayer node];
-    [self addChild:smlayer];
-}
+//- (void) addSpriteLayer
+//{
+//    SpriteMainLayer * smlayer= [SpriteMainLayer node];
+//    [self addChild:smlayer];
+//}
 
 - (void) addControlLayer
 {
@@ -49,7 +49,7 @@
     if(self = [super init])
     {
         [self addMapLayer];
-        [self addSpriteLayer];
+        //[self addSpriteLayer];
         [self addControlLayer];
     }
     return self;

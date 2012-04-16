@@ -12,6 +12,7 @@
 #import "TankWorldConfig.h"
 #import "RootViewController.h"
 #import "MainMenuScene.h"
+#import "TankModelManager.h"
 
 @implementation TankWorldAppDelegate
 
@@ -41,6 +42,8 @@
 
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
+    //[[TankModelManager shareTankModelManager] tankModelWithTankType:kTankModelTypeDefault];
+    
 	// Init the window
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	

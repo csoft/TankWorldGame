@@ -10,4 +10,17 @@
 
 @implementation PlistFileEngine
 
+
++ (PlistFileEngine *) sharePlistFileEngine
+{
+    static PlistFileEngine * shareEngin = nil;
+    
+    if(shareEngin) return shareEngin;
+    
+    shareEngin = [[PlistFileEngine alloc] init];
+    
+    return shareEngin;
+    
+}
+
 @end

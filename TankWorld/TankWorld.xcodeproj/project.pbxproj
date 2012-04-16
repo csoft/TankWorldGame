@@ -159,6 +159,7 @@
 		E49E5AF4153AE10F0005E1C0 /* BarrelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AF3153AE10F0005E1C0 /* BarrelModel.m */; };
 		E49E5AF8153B329D0005E1C0 /* TankModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AF7153B329D0005E1C0 /* TankModelManager.m */; };
 		E49E5AFB153B3B030005E1C0 /* PlistFileEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */; };
+		E4D6206B153C139D00E0EEC7 /* TankModelInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4D6206A153C139D00E0EEC7 /* TankModelInfo.plist */; };
 		E4FA8BE8153ACEF60096891D /* bullet.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BDF153ACEF60096891D /* bullet.PNG */; };
 		E4FA8BE9153ACEF60096891D /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BE0153ACEF60096891D /* enemy.png */; };
 		E4FA8BEA153ACEF60096891D /* exploBig.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BE1153ACEF60096891D /* exploBig.png */; };
@@ -167,7 +168,6 @@
 		E4FA8BEF153ACEF60096891D /* Tank.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BE7153ACEF60096891D /* Tank.PNG */; };
 		E4FA8BF4153ACF3F0096891D /* Level1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BF2153ACF3F0096891D /* Level1.tmx */; };
 		E4FA8BF5153ACF3F0096891D /* tileSet.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BF3153ACF3F0096891D /* tileSet.PNG */; };
-		E4FA8BF9153AD2850096891D /* SpriteMainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8BF8153AD2850096891D /* SpriteMainLayer.m */; };
 		E4FA8BFC153AD36F0096891D /* TankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8BFB153AD36F0096891D /* TankModel.m */; };
 		E4FA8BFF153AD3950096891D /* BulletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8BFE153AD3950096891D /* BulletModel.m */; };
 		E4FA8C02153AD3C50096891D /* RadarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8C01153AD3C50096891D /* RadarModel.m */; };
@@ -493,6 +493,7 @@
 		E49E5AF7153B329D0005E1C0 /* TankModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankModelManager.m; sourceTree = "<group>"; };
 		E49E5AF9153B3B030005E1C0 /* PlistFileEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistFileEngine.h; sourceTree = "<group>"; };
 		E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistFileEngine.m; sourceTree = "<group>"; };
+		E4D6206A153C139D00E0EEC7 /* TankModelInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TankModelInfo.plist; sourceTree = "<group>"; };
 		E4FA8BDF153ACEF60096891D /* bullet.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.PNG; sourceTree = "<group>"; };
 		E4FA8BE0153ACEF60096891D /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
 		E4FA8BE1153ACEF60096891D /* exploBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exploBig.png; sourceTree = "<group>"; };
@@ -501,8 +502,6 @@
 		E4FA8BE7153ACEF60096891D /* Tank.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tank.PNG; sourceTree = "<group>"; };
 		E4FA8BF2153ACF3F0096891D /* Level1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Level1.tmx; sourceTree = "<group>"; };
 		E4FA8BF3153ACF3F0096891D /* tileSet.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileSet.PNG; sourceTree = "<group>"; };
-		E4FA8BF7153AD2850096891D /* SpriteMainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteMainLayer.h; sourceTree = "<group>"; };
-		E4FA8BF8153AD2850096891D /* SpriteMainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteMainLayer.m; sourceTree = "<group>"; };
 		E4FA8BFA153AD36F0096891D /* TankModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankModel.h; sourceTree = "<group>"; };
 		E4FA8BFB153AD36F0096891D /* TankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankModel.m; sourceTree = "<group>"; };
 		E4FA8BFD153AD3950096891D /* BulletModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletModel.h; sourceTree = "<group>"; };
@@ -581,6 +580,7 @@
 				E4F8C3EB1539C3AB006CF0F7 /* Images */,
 				E4F8C3EC1539C3AB006CF0F7 /* Sound */,
 				E40112DA1539560C002B5105 /* Info.plist */,
+				E4D6206A153C139D00E0EEC7 /* TankModelInfo.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1151,7 +1151,6 @@
 		E49268981539ED5900A08051 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
-				E4FA8BF6153AD2850096891D /* SpriteLayer */,
 				E49268991539EF0400A08051 /* ControlLayer */,
 				E492689A1539EF0400A08051 /* MapLayer */,
 			);
@@ -1208,15 +1207,6 @@
 				E4FA8BF3153ACF3F0096891D /* tileSet.PNG */,
 			);
 			path = Levels;
-			sourceTree = "<group>";
-		};
-		E4FA8BF6153AD2850096891D /* SpriteLayer */ = {
-			isa = PBXGroup;
-			children = (
-				E4FA8BF7153AD2850096891D /* SpriteMainLayer.h */,
-				E4FA8BF8153AD2850096891D /* SpriteMainLayer.m */,
-			);
-			path = SpriteLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1280,6 +1270,7 @@
 				E4FA8BEF153ACEF60096891D /* Tank.PNG in Resources */,
 				E4FA8BF4153ACF3F0096891D /* Level1.tmx in Resources */,
 				E4FA8BF5153ACF3F0096891D /* tileSet.PNG in Resources */,
+				E4D6206B153C139D00E0EEC7 /* TankModelInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1429,7 +1420,6 @@
 				E49268971539EBB100A08051 /* MainGameScene.m in Sources */,
 				E492689E1539EF8B00A08051 /* ControlMainLayer.m in Sources */,
 				E49268A11539EFA300A08051 /* MapMainLayer.m in Sources */,
-				E4FA8BF9153AD2850096891D /* SpriteMainLayer.m in Sources */,
 				E4FA8BFC153AD36F0096891D /* TankModel.m in Sources */,
 				E4FA8BFF153AD3950096891D /* BulletModel.m in Sources */,
 				E4FA8C02153AD3C50096891D /* RadarModel.m in Sources */,

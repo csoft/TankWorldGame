@@ -12,7 +12,7 @@
 @class TankModel;
 @interface TankModelManager : NSObject
 {
-    
+    NSArray * tankModelConstData;//坦克不一样类型对应的一些固定的数据，和TankModelInfo.plist文件对应
     
 }
 
