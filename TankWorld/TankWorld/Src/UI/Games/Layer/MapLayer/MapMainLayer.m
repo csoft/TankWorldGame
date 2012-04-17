@@ -8,17 +8,20 @@
 
 #import "MapMainLayer.h"
 #import "TankWorldTypeDef.h"
-
+#import "TankSprite.h"
 
 @implementation MapMainLayer
 
 - (id) init
 {
     if(self = [super init])
-    {
-        CCSprite * bgSprite = [CCSprite spriteWithFile:@"worldmap.jpg"];
-        [self addChild:bgSprite];
+    {        
+        gameMap = [CCTMXTiledMap tiledMapWithTMXFile:@"level1.tmx"];
+        [self addChild:gameMap z:0 tag:1];
         
+        meTank = [TankSprite tankSpriteWithTankModelType:kTankModelTypeDefault];
+        meTank.position = CGPointMake(20,20);
+        [gameMap addChild:meTank z:100 tag:2];
     }
     return self;
 }
@@ -36,7 +39,7 @@
 //坦克根据指定角度移动，移动成功返回YES，失败NO
 - (BOOL) tankMoveWithAngle:(CGFloat) angle
 {
-    return YES;
+    return [meTank moveWithAngle:angle];
 }
 
 

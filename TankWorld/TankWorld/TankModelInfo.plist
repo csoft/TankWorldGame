@@ -4,9 +4,9 @@
 <array>
 	<dict>
 		<key>TankSize_Width</key>
-		<integer>48</integer>
+		<integer>40</integer>
 		<key>TankSize_Height</key>
-		<integer>48</integer>
+		<integer>40</integer>
 		<key>MoveSpeed</key>
 		<integer>10</integer>
 		<key>TurnSpeed</key>

@@ -10,12 +10,13 @@
 #import "cocos2d.h"
 #import "TankWorldProtocol.h"
 
-
+@class TankSprite;
 @interface MapMainLayer : CCLayer<MapMainLayerDelegate> 
 {
     
+    CCTMXTiledMap *gameMap;//游戏地图
     
-    
+    TankSprite * meTank;//自己控制的坦克
     
 }
 
