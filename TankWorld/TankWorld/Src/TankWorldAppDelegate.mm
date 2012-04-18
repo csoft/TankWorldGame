@@ -66,10 +66,9 @@
 	//
 	//
 	EAGLView *glView = [EAGLView viewWithFrame:[window bounds]
-								   pixelFormat:kEAGLColorFormatRGB565	// kEAGLColorFormatRGBA8
-								   depthFormat:0						// GL_DEPTH_COMPONENT16_OES
-						];
-	
+								   pixelFormat:kEAGLColorFormatRGB565
+								   depthFormat:GL_DEPTH_COMPONENT24_OES];
+    
 	// attach the openglView to the director
 	[director setOpenGLView:glView];
 	
@@ -94,7 +93,13 @@
 	
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
+    
+    // required for cc_vertexz property to work properly (if not set, cc_vertexz layers will be zoomed out!)
+	[director setProjection:kCCDirectorProjection2D];
 	
+	// Turn on multiple touches
+	EAGLView *view = [director openGLView];
+	[view setMultipleTouchEnabled:YES];
 	
 	// make the OpenGLView a child of the view controller
 	[viewController setView:glView];
@@ -109,12 +114,12 @@
 	// You can change anytime.
 	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
     
-	
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene: [MainMenuScene scene]];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

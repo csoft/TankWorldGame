@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DD8187F153F119100AA886E /* tileSet_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8187D153F119100AA886E /* tileSet_32.png */; };
+		1DD81880153F119100AA886E /* defaultTileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 1DD8187E153F119100AA886E /* defaultTileMap.tmx */; };
 		E40112B91539560C002B5105 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40112B81539560C002B5105 /* QuartzCore.framework */; };
 		E40112BB1539560C002B5105 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40112BA1539560C002B5105 /* OpenGLES.framework */; };
 		E40112BD1539560C002B5105 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40112BC1539560C002B5105 /* OpenAL.framework */; };
@@ -178,6 +180,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DD8187D153F119100AA886E /* tileSet_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileSet_32.png; sourceTree = "<group>"; };
+		1DD8187E153F119100AA886E /* defaultTileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = defaultTileMap.tmx; sourceTree = "<group>"; };
 		E40112B41539560C002B5105 /* TankWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TankWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40112B81539560C002B5105 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E40112BA1539560C002B5105 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1233,6 +1237,8 @@
 		E4FA8BF1153ACF3F0096891D /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				1DD8187D153F119100AA886E /* tileSet_32.png */,
+				1DD8187E153F119100AA886E /* defaultTileMap.tmx */,
 				E4FA8BF2153ACF3F0096891D /* Level1.tmx */,
 				E4FA8BF3153ACF3F0096891D /* tileSet.PNG */,
 			);
@@ -1301,6 +1307,8 @@
 				E4FA8BF4153ACF3F0096891D /* Level1.tmx in Resources */,
 				E4FA8BF5153ACF3F0096891D /* tileSet.PNG in Resources */,
 				E4D6206B153C139D00E0EEC7 /* TankModelInfo.plist in Resources */,
+				1DD8187F153F119100AA886E /* tileSet_32.png in Resources */,
+				1DD81880153F119100AA886E /* defaultTileMap.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

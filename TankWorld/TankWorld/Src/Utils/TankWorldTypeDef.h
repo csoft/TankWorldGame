@@ -26,3 +26,10 @@ typedef enum
     kTankFireTypeLevel1//暂时不知道怎么定义，随便定义先
     
 }TankFireType;
+
+
+typedef enum
+{
+	kTileMapLevelDefault
+    
+}TileMapLevelType; //地图的关卡标识类型
