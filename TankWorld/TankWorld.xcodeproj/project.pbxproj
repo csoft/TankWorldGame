@@ -177,6 +177,12 @@
 		E4FA8BFC153AD36F0096891D /* TankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8BFB153AD36F0096891D /* TankModel.m */; };
 		E4FA8BFF153AD3950096891D /* BulletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8BFE153AD3950096891D /* BulletModel.m */; };
 		E4FA8C02153AD3C50096891D /* RadarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8C01153AD3C50096891D /* RadarModel.m */; };
+		E5EE07E6153F2E3700A57AFF /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07DD153F2E3700A57AFF /* ColoredCircleSprite.m */; };
+		E5EE07E7153F2E3700A57AFF /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07DF153F2E3700A57AFF /* SneakyButton.m */; };
+		E5EE07E8153F2E3800A57AFF /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07E1153F2E3700A57AFF /* SneakyButtonSkinnedBase.m */; };
+		E5EE07E9153F2E3800A57AFF /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07E3153F2E3700A57AFF /* SneakyJoystick.m */; };
+		E5EE07EA153F2E3800A57AFF /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07E5153F2E3700A57AFF /* SneakyJoystickSkinnedBase.m */; };
+		E5EE07F6153F2EE200A57AFF /* SneakyExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07F5153F2EE200A57AFF /* SneakyExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -526,6 +532,18 @@
 		E4FA8C00153AD3C50096891D /* RadarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarModel.h; sourceTree = "<group>"; };
 		E4FA8C01153AD3C50096891D /* RadarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarModel.m; sourceTree = "<group>"; };
 		E4FA8C03153AD49C0096891D /* TankWorldTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankWorldTypeDef.h; sourceTree = "<group>"; };
+		E5EE07DC153F2E3700A57AFF /* ColoredCircleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredCircleSprite.h; sourceTree = "<group>"; };
+		E5EE07DD153F2E3700A57AFF /* ColoredCircleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredCircleSprite.m; sourceTree = "<group>"; };
+		E5EE07DE153F2E3700A57AFF /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
+		E5EE07DF153F2E3700A57AFF /* SneakyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
+		E5EE07E0153F2E3700A57AFF /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		E5EE07E1153F2E3700A57AFF /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
+		E5EE07E2153F2E3700A57AFF /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
+		E5EE07E3153F2E3700A57AFF /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
+		E5EE07E4153F2E3700A57AFF /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
+		E5EE07E5153F2E3700A57AFF /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
+		E5EE07F4153F2EE200A57AFF /* SneakyExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyExtensions.h; sourceTree = "<group>"; };
+		E5EE07F5153F2EE200A57AFF /* SneakyExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyExtensions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1163,6 +1181,7 @@
 		E49268781539C63900A08051 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				E5EE07DB153F2E3700A57AFF /* SneakyInput */,
 				E49268791539C63900A08051 /* Log */,
 			);
 			path = ThirdParty;
@@ -1243,6 +1262,25 @@
 				E4FA8BF3153ACF3F0096891D /* tileSet.PNG */,
 			);
 			path = Levels;
+			sourceTree = "<group>";
+		};
+		E5EE07DB153F2E3700A57AFF /* SneakyInput */ = {
+			isa = PBXGroup;
+			children = (
+				E5EE07F4153F2EE200A57AFF /* SneakyExtensions.h */,
+				E5EE07F5153F2EE200A57AFF /* SneakyExtensions.m */,
+				E5EE07DC153F2E3700A57AFF /* ColoredCircleSprite.h */,
+				E5EE07DD153F2E3700A57AFF /* ColoredCircleSprite.m */,
+				E5EE07DE153F2E3700A57AFF /* SneakyButton.h */,
+				E5EE07DF153F2E3700A57AFF /* SneakyButton.m */,
+				E5EE07E0153F2E3700A57AFF /* SneakyButtonSkinnedBase.h */,
+				E5EE07E1153F2E3700A57AFF /* SneakyButtonSkinnedBase.m */,
+				E5EE07E2153F2E3700A57AFF /* SneakyJoystick.h */,
+				E5EE07E3153F2E3700A57AFF /* SneakyJoystick.m */,
+				E5EE07E4153F2E3700A57AFF /* SneakyJoystickSkinnedBase.h */,
+				E5EE07E5153F2E3700A57AFF /* SneakyJoystickSkinnedBase.m */,
+			);
+			path = SneakyInput;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1468,6 +1506,12 @@
 				E46CFE86153C775800B09E39 /* BulletSprite.m in Sources */,
 				E46CFE89153C776E00B09E39 /* RadarSprite.m in Sources */,
 				E46CFE8C153C778400B09E39 /* BarrelSprite.m in Sources */,
+				E5EE07E6153F2E3700A57AFF /* ColoredCircleSprite.m in Sources */,
+				E5EE07E7153F2E3700A57AFF /* SneakyButton.m in Sources */,
+				E5EE07E8153F2E3800A57AFF /* SneakyButtonSkinnedBase.m in Sources */,
+				E5EE07E9153F2E3800A57AFF /* SneakyJoystick.m in Sources */,
+				E5EE07EA153F2E3800A57AFF /* SneakyJoystickSkinnedBase.m in Sources */,
+				E5EE07F6153F2EE200A57AFF /* SneakyExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,103 @@
 
 #import "ControlMainLayer.h"
 
+@interface ControlMainLayer (PrivateMethods)
+-(void) addFireButton;
+-(void) addJoystick;
+@end
+
 
 @implementation ControlMainLayer
 @synthesize mapMainLayerDelegate = _mapMainLayerDelegate;
 
+-(id) init
+{
+	if ((self = [super init]))
+	{
+		[self addFireButton];
+		[self addJoystick];
+		
+		[self scheduleUpdate];
+	}
+	
+	return self;
+}
+
+-(void) dealloc
+{
+    _mapMainLayerDelegate = nil;
+	[super dealloc];
+}
+
+-(void) addFireButton
+{
+	float buttonRadius = 50;
+	CGSize screenSize = [[CCDirector sharedDirector] winSize];
+    
+	fireButton = [SneakyButton button];
+	fireButton.isHoldable = YES;
+	
+	SneakyButtonSkinnedBase* skinFireButton = [SneakyButtonSkinnedBase skinnedButton];
+	skinFireButton.position = CGPointMake(screenSize.width - buttonRadius * 1.5f, buttonRadius * 1.5f);
+	skinFireButton.defaultSprite = [CCSprite spriteWithFile:@"Tank.PNG"];//[CCSprite spriteWithSpriteFrameName:@"button-default.png"];
+	skinFireButton.pressSprite = [CCSprite spriteWithFile:@"Tank.PNG"];//[CCSprite spriteWithSpriteFrameName:@"button-pressed.png"];
+	skinFireButton.button = fireButton;
+	[self addChild:skinFireButton];
+}
+
+-(void) addJoystick
+{
+	float stickRadius = 50;
+    
+	joystick = [SneakyJoystick joystickWithRect:CGRectMake(0, 0, stickRadius, stickRadius)];
+	joystick.autoCenter = YES;
+	
+	// Now with fewer directions
+	joystick.isDPad = YES;
+	joystick.numberOfDirections = 8;
+	
+	SneakyJoystickSkinnedBase* skinStick = [SneakyJoystickSkinnedBase skinnedJoystick];
+	skinStick.position = CGPointMake(stickRadius * 1.5f, stickRadius * 1.5f);
+	skinStick.backgroundSprite = [CCSprite spriteWithFile:@"Tank.PNG"];//[CCSprite spriteWithSpriteFrameName:@"button-disabled.png"];
+	skinStick.backgroundSprite.color = ccMAGENTA;
+	skinStick.thumbSprite = [CCSprite spriteWithFile:@"Tank.PNG"];//[CCSprite spriteWithSpriteFrameName:@"button-disabled.png"];
+	skinStick.thumbSprite.scale = 0.5f;
+	skinStick.joystick = joystick;
+	[self addChild:skinStick];
+}
+
+-(void) update:(ccTime)delta
+{
+	totalTime += delta;
+    
+	// Continuous fire
+	if (fireButton.active && totalTime > nextShotTime)
+	{
+		nextShotTime = totalTime + 0.5f;
+        
+        [_mapMainLayerDelegate tankFireWithTankFireType:kTankFireTypeDefault];
+		//GameScene* game = [GameScene sharedGameScene];
+		//[game shootBulletFromShip:[game defaultShip]];
+	}
+	
+	// Allow faster shooting by quickly tapping the fire button.
+	if (fireButton.active == NO)
+	{
+		nextShotTime = 0;
+	}
+	
+	// Moving the ship with the thumbstick.
+	//GameScene* game = [GameScene sharedGameScene];
+	//Ship* ship = [game defaultShip];
+	
+	CGPoint velocity = ccpMult(joystick.velocity, 200);
+	if (velocity.x != 0 && velocity.y != 0)
+	{
+        CCLOG(@"%@", @"_mapMainLayerDelegate tankMoveWithAngle:joystick.degrees");
+        [_mapMainLayerDelegate tankMoveWithAngle:joystick.degrees];
+		//ship.position = CGPointMake(ship.position.x + velocity.x * delta, ship.position.y + velocity.y * delta);
+	}
+    
+}
 
 @end

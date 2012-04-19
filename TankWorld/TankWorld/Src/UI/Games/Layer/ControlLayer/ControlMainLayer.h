@@ -10,8 +10,22 @@
 #import "cocos2d.h"
 #import "TankWorldProtocol.h"
 
+// SneakyInput headers
+#import "ColoredCircleSprite.h"
+#import "SneakyButton.h"
+#import "SneakyButtonSkinnedBase.h"
+#import "SneakyJoystick.h"
+#import "SneakyJoystickSkinnedBase.h"
+
+#import "SneakyExtensions.h"
+
 @interface ControlMainLayer : CCLayer 
 {
+    SneakyButton* fireButton;
+	SneakyJoystick* joystick;
+	
+	ccTime totalTime;
+	ccTime nextShotTime;
     
     id<MapMainLayerDelegate>        _mapMainLayerDelegate;//地图层委托，用来回调坦克移动和发射炮弹
     
