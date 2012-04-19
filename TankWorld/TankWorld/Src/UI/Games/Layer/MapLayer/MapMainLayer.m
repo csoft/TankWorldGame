@@ -95,17 +95,24 @@
     {        
         //加载地图
         gameMap = [CCTMXTiledMap tiledMapWithTMXFile:@"defaultTileMap.tmx"];
-        [self addChild:gameMap z:-1 tag:kTileMapLevelDefault];
+        [self addChild:gameMap z:0 tag:kTileMapLevelDefault];
+        
         //设置地图的默认位置
-		gameMap.position = CGPointMake(-500, -500);
+		gameMap.position = CGPointMake(-500, -500);//为什么？
 		self.isTouchEnabled = YES;
 		const int borderSize = 10;
 		playableAreaMin = CGPointMake(borderSize, borderSize);
 		playableAreaMax = CGPointMake(gameMap.mapSize.width - 1 - borderSize, gameMap.mapSize.height - 1 - borderSize);
         
         meTank = [TankSprite tankSpriteWithTankModelType:kTankModelTypeDefault];
-        meTank.position = CGPointMake(20,20);
-        [gameMap addChild:meTank z:100 tag:2];
+        
+        CGSize screenSize = [[CCDirector sharedDirector] winSize];
+        CGPoint screenCenter = CGPointMake(screenSize.width * 0.5f, screenSize.height * 0.5f);
+        meTank.position =screenCenter;//在屏幕中间
+        [self addChild:meTank z:0 tag:2];
+        
+        //TODO: 移动地图，使坦克位在地图中心
+        
 		
     }
     return self;
