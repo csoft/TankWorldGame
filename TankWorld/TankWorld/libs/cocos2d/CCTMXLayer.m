@@ -140,6 +140,7 @@ int compareInts (const void * a, const void * b);
 @synthesize layerOrientation = layerOrientation_;
 @synthesize mapTileSize = mapTileSize_;
 @synthesize properties = properties_;
+@synthesize minGID = minGID_, maxGID = maxGID_;
 
 #pragma mark CCTMXLayer - init & alloc & dealloc
 

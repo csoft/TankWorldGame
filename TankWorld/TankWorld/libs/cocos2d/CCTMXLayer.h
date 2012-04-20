@@ -101,6 +101,11 @@
 /** properties from the layer. They can be added using Tiled */
 @property (nonatomic,readwrite,retain) NSMutableArray *properties;
 
+//add by cxb 2012-4-21 [添加瓦块的最小Gid和最大Gid为公共属性，外部可以访问]
+@property (nonatomic,readwrite) NSUInteger minGID;
+@property (nonatomic,readwrite) NSUInteger maxGID;
+//add end
+
 /** creates a CCTMXLayer with an tileset info, a layer info and a map info */
 +(id) layerWithTilesetInfo:(CCTMXTilesetInfo*)tilesetInfo layerInfo:(CCTMXLayerInfo*)layerInfo mapInfo:(CCTMXMapInfo*)mapInfo;
 /** initializes a CCTMXLayer with a tileset info, a layer info and a map info */

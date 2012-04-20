@@ -18,6 +18,8 @@
     
     TankSprite * meTank;//自己控制的坦克
     
+    NSMutableArray * otherTanks;//其他的坦克
+    
     //可运动的最小区域值和最大区域值
     CGPoint playableAreaMin, playableAreaMax;
     
