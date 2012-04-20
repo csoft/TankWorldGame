@@ -46,8 +46,8 @@
 	
 	SneakyButtonSkinnedBase* skinFireButton = [SneakyButtonSkinnedBase skinnedButton];
 	skinFireButton.position = CGPointMake(screenSize.width - buttonRadius * 1.5f, buttonRadius * 1.5f);
-	skinFireButton.defaultSprite = [CCSprite spriteWithFile:@"Tank.PNG"];//[CCSprite spriteWithSpriteFrameName:@"button-default.png"];
-	skinFireButton.pressSprite = [CCSprite spriteWithFile:@"Tank.PNG"];//[CCSprite spriteWithSpriteFrameName:@"button-pressed.png"];
+	skinFireButton.defaultSprite = [CCSprite spriteWithFile:@"fire.png"];//[CCSprite spriteWithSpriteFrameName:@"button-default.png"];
+	skinFireButton.pressSprite = [CCSprite spriteWithFile:@"fire.png"];//[CCSprite spriteWithSpriteFrameName:@"button-pressed.png"];
 	skinFireButton.button = fireButton;
 	[self addChild:skinFireButton];
 }
@@ -65,9 +65,9 @@
 	
 	SneakyJoystickSkinnedBase* skinStick = [SneakyJoystickSkinnedBase skinnedJoystick];
 	skinStick.position = CGPointMake(stickRadius * 1.5f, stickRadius * 1.5f);
-	skinStick.backgroundSprite = [CCSprite spriteWithFile:@"Tank.PNG"];//[CCSprite spriteWithSpriteFrameName:@"button-disabled.png"];
+	skinStick.backgroundSprite = [CCSprite spriteWithFile:@"fire.png"];//[CCSprite spriteWithSpriteFrameName:@"button-disabled.png"];
 	skinStick.backgroundSprite.color = ccMAGENTA;
-	skinStick.thumbSprite = [CCSprite spriteWithFile:@"Tank.PNG"];//[CCSprite spriteWithSpriteFrameName:@"button-disabled.png"];
+	skinStick.thumbSprite = [CCSprite spriteWithFile:@"fire.png"];//[CCSprite spriteWithSpriteFrameName:@"button-disabled.png"];
 	skinStick.thumbSprite.scale = 0.5f;
 	skinStick.joystick = joystick;
 	[self addChild:skinStick];

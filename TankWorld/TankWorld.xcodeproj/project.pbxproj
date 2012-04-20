@@ -177,6 +177,7 @@
 		E4FA8BFC153AD36F0096891D /* TankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8BFB153AD36F0096891D /* TankModel.m */; };
 		E4FA8BFF153AD3950096891D /* BulletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8BFE153AD3950096891D /* BulletModel.m */; };
 		E4FA8C02153AD3C50096891D /* RadarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FA8C01153AD3C50096891D /* RadarModel.m */; };
+		E566A6E41541D08F00864E74 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = E566A6E31541D08F00864E74 /* fire.png */; };
 		E5EE07E6153F2E3700A57AFF /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07DD153F2E3700A57AFF /* ColoredCircleSprite.m */; };
 		E5EE07E7153F2E3700A57AFF /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07DF153F2E3700A57AFF /* SneakyButton.m */; };
 		E5EE07E8153F2E3800A57AFF /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EE07E1153F2E3700A57AFF /* SneakyButtonSkinnedBase.m */; };
@@ -532,6 +533,7 @@
 		E4FA8C00153AD3C50096891D /* RadarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarModel.h; sourceTree = "<group>"; };
 		E4FA8C01153AD3C50096891D /* RadarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarModel.m; sourceTree = "<group>"; };
 		E4FA8C03153AD49C0096891D /* TankWorldTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankWorldTypeDef.h; sourceTree = "<group>"; };
+		E566A6E31541D08F00864E74 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		E5EE07DC153F2E3700A57AFF /* ColoredCircleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredCircleSprite.h; sourceTree = "<group>"; };
 		E5EE07DD153F2E3700A57AFF /* ColoredCircleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredCircleSprite.m; sourceTree = "<group>"; };
 		E5EE07DE153F2E3700A57AFF /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
@@ -1231,6 +1233,7 @@
 		E4F8C3EB1539C3AB006CF0F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E566A6E31541D08F00864E74 /* fire.png */,
 				E4FA8BF1153ACF3F0096891D /* Levels */,
 				E4FA8BDF153ACEF60096891D /* bullet.PNG */,
 				E4FA8BE0153ACEF60096891D /* enemy.png */,
@@ -1347,6 +1350,7 @@
 				E4D6206B153C139D00E0EEC7 /* TankModelInfo.plist in Resources */,
 				1DD8187F153F119100AA886E /* tileSet_32.png in Resources */,
 				1DD81880153F119100AA886E /* defaultTileMap.tmx in Resources */,
+				E566A6E41541D08F00864E74 /* fire.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
