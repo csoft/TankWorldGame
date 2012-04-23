@@ -15,6 +15,7 @@
 
 @synthesize tankType=_tankType;
 @synthesize name=_name;
+@synthesize tankID=_tankID;
 @synthesize groupID=_groupID;
 @synthesize bullet=_bullet;
 @synthesize radar=_radar;

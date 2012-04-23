@@ -43,16 +43,19 @@
  </layer>
  <layer name="TankPosition" width="50" height="50" opacity="0">
   <properties>
-   <property name="MeTank_x" value="23"/>
-   <property name="MeTank_y" value="35"/>
-   <property name="NPCTankNumber" value="2"/>
-   <property name="NPCTank_x1" value="37"/>
-   <property name="NPCTank_x2" value="37"/>
-   <property name="NPCTank_y1" value="32"/>
-   <property name="NPCTank_y2" value="29"/>
+   <property name="MeTankNumber" value="1"/>
+   <property name="MeTank_x1" value="16"/>
+   <property name="MeTank_y1" value="19"/>
+   <property name="NPCTankNumber" value="3"/>
+   <property name="NPCTank_x1" value="23"/>
+   <property name="NPCTank_x2" value="38"/>
+   <property name="NPCTank_x3" value="31"/>
+   <property name="NPCTank_y1" value="36"/>
+   <property name="NPCTank_y2" value="32"/>
+   <property name="NPCTank_y3" value="13"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt1LkRACEMBEHyTw8Cwsc4h+JZrjuCEahUCgAA3KWeDhjc1jMrcZ7E5j9K/afU7h28DZDArWIVu8UK9oov7XQAAAA8ogMX6gkT
+   eJzt17ENADAIA0H2X48MlBUoIoHI3QRfuHEEAADMkt0BwFdOdwAAACW+ItvZOAAAvHEBjMgDTg==
   </data>
  </layer>
 </map>

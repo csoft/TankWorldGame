@@ -14,11 +14,37 @@
 {
     NSArray * tankModelConstData;//坦克不一样类型对应的一些固定的数据，和TankModelInfo.plist文件对应
     
+    //自己控制的坦克的索引号，因为多个人联网对打时，此索引号指定自己的坦克在地图中的位置索引，
+    //对打时这个数据是服务器随机产生分配给各个玩家的,单打时在玩家数内随机一个位置
+    NSInteger  _meTankIndex;
+    
+    //自己坦克默认位置集合
+    NSMutableArray * _meTankDefaultPositionArray;
+    
+    //电脑坦克默认位置集合
+    NSMutableArray * _npcTankDefaultPositionArray;
+    
+    TankModel * _meTankModel;
+    
+    NSMutableArray * _otherTankModels;
+    
 }
+@property(nonatomic,assign)NSInteger  meTankIndex;
+
 
 + (TankModelManager *)shareTankModelManager;
 
 - (TankModel *) tankModelWithTankType:(TankModelType)tankType;
+
+//根据类型获取自己的坦克实体，此实体包含了位置信息
+- (TankModel *) meTankModelWithTankType:(TankModelType)tankType;
+
+//获取其他的坦克的集合，包括NPC，以及联网的对手的坦克集合
+- (NSArray *)otherTankModels;
+
+
+//根据坦克位置地图的属性字典，初始化自己和电脑坦克位置
+- (void) setupTankPositionWithTankPositionMap:(NSDictionary *) tankPositionMapProperties;
 
 
 //判断指定的坦克是否能按指定角度移动

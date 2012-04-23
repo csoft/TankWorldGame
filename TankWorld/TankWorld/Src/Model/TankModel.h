@@ -18,6 +18,8 @@
     
     NSString *      _name;//此坦克的名称
     
+    NSString *     _tankID;//此坦克在一次对战中的唯一ID
+    
     NSUInteger      _groupID; //此坦克所属的组（队伍），同一个组的坦克相互之间不会造成伤害
     
     BulletModel *   _bullet;//炮弹，一辆坦克发射炮弹，只能一个炮弹消失后才能发第二个，所以不是数组
@@ -43,6 +45,7 @@
 }
 @property(nonatomic,assign)TankModelType    tankType;
 @property(nonatomic,copy)NSString *         name;
+@property(nonatomic,copy)NSString *         tankID;
 @property(nonatomic,assign)NSUInteger       groupID;
 @property(nonatomic,retain)BulletModel *    bullet;
 @property(nonatomic,retain)RadarModel *     radar;

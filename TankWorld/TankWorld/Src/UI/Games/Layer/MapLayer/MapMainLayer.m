@@ -16,6 +16,7 @@
 #import "BulletSprite.h"
 #import "RadarSprite.h"
 #import "BarrelSprite.h"
+#import "TankModelManager.h"
 
 @implementation MapMainLayer
 
@@ -95,6 +96,14 @@
 	[tileMap runAction:move];
 }
 
+//根据地图的X，Y，获取屏幕的X,Y位置
+- (CGPoint) positionFromTilePos:(CGPoint)tilePos
+{
+    CCTMXLayer* groundLayer = [gameMap layerNamed:@"Ground"];
+    CGPoint tankWinPos = [groundLayer positionAt:tilePos];
+    return tankWinPos;
+
+}
 
 - (id) init
 {
@@ -105,61 +114,38 @@
         [self addChild:gameMap z:0 tag:kTileMapLevelDefault];
         
         //TODO: 此位置要动态获取，使自己的坦克放在指定的位置
-		gameMap.position = CGPointMake(-1000, -600);
+		gameMap.position = CGPointMake(-500, -500);
         
         
 		self.isTouchEnabled = YES;
 		const int borderSize = 10;
 		playableAreaMin = CGPointMake(borderSize, borderSize);
 		playableAreaMax = CGPointMake(gameMap.mapSize.width - 1 - borderSize, gameMap.mapSize.height - 1 - borderSize);
+                
         
-        meTank = [TankSprite tankSpriteWithTankModelType:kTankModelTypeDefault];
+        //获取坦克默认放置的位置地图层
+        CCTMXLayer* tankPositionLayer = [gameMap layerNamed:@"TankPosition"];
+        //初始化坦克位置
+        [[TankModelManager shareTankModelManager] setupTankPositionWithTankPositionMap:(NSDictionary*)[tankPositionLayer properties]];
         
+        //创建自己控制的坦克
+        meTank = [TankSprite tankSpriteForMeWithTankModelType:kTankModelTypeDefault];
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         CGPoint screenCenter = CGPointMake(screenSize.width * 0.5f, screenSize.height * 0.5f);
         meTank.position =screenCenter;//自己的坦克固定显示在屏幕中间
         meTank.tankModel.name = @"me";
         [self addChild:meTank z:0 tag:2];
         
+        [self centerTileMapOnTileCoord:meTank.tankModel.position tileMap:gameMap];
         
-		//添加电脑坦克，以及联网情况下对方的坦克
-        TankSprite * npcTank = [TankSprite tankSpriteWithTankModelType:kTankModelTypeDefault];
-        //npcTank.position = CGPointMake(1000, 500);//此位置是相对于地图的位置
-        npcTank.tankModel.name = @"npc1";
-        [otherTanks addObject:npcTank];
-        [gameMap addChild:npcTank];
-        
-        
-        CCTMXLayer* groundLayer = [gameMap layerNamed:@"Ground"];
-        CGPoint tankPos = [groundLayer positionAt:CGPointMake(10,10)];
-        npcTank.position = tankPos;
-        
-        //获取坦克默认放置的位置
-        CCTMXLayer* tankPositionLayer = [gameMap layerNamed:@"TankPosition"];
-        NSDictionary * dic = [tankPositionLayer properties];
-        
-        //获取自己的坦克可以放置的位置
-        NSInteger meTank_map_x = [[dic objectForKey:@"MeTank_x"] intValue];
-        NSInteger meTank_map_y = [[dic objectForKey:@"MeTank_y"] intValue];
-        
-        
-        
-        
-        
-        
-        
-        npcTank = [TankSprite tankSpriteWithTankModelType:kTankModelTypeDefault];
-        npcTank.position = CGPointMake(1080, 580);//此位置是相对于地图的位置
-        npcTank.tankModel.name = @"npc2";
-        [otherTanks addObject:npcTank];
-        [gameMap addChild:npcTank];
-        
-        npcTank = [TankSprite tankSpriteWithTankModelType:kTankModelTypeDefault];
-        npcTank.position = CGPointMake(1200, 600);//此位置是相对于地图的位置
-        npcTank.tankModel.name = @"npc3";
-        [otherTanks addObject:npcTank];
-        [gameMap addChild:npcTank];
-        
+        //创建电脑坦克和联机的坦克
+        otherTanks = [[TankSprite tankSpritesForNPC] retain];
+        for(TankSprite * tsPrite in otherTanks)
+        {
+            tsPrite.position = [self positionFromTilePos:tsPrite.tankModel.position];
+            tsPrite.tankModel.name = @"npc";
+            [gameMap addChild:tsPrite];
+        }        
     }
     return self;
 }

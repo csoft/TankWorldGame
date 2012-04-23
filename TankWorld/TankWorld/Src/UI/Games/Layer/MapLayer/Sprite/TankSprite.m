@@ -34,6 +34,61 @@
 }
 
 
+//根据坦克的类型创建自己控制的坦克精灵
++ (TankSprite *) tankSpriteForMeWithTankModelType:(TankModelType)tankType
+{
+    TankModel * tModel = [[TankModelManager shareTankModelManager] meTankModelWithTankType:tankType];
+    
+    CGFloat tankIndex = (NSUInteger)tankType*tModel.tankSize.width;
+    TankSprite * ts = [[TankSprite alloc] initWithFile:@"Tank.PNG" 
+                                                  rect:CGRectMake(tankIndex,0,tModel.tankSize.width,tModel.tankSize.height)];
+    ts.tankModel = tModel;
+    
+    
+    
+    RadarSprite * rs = [[RadarSprite alloc] init];
+    rs.radarModel = ts.tankModel.radar;
+    [ts addChild:rs];
+    [rs release];
+    
+    BarrelSprite * bas = [[BarrelSprite alloc] init];
+    bas.barrelModel = ts.tankModel.barrel;
+    [ts addChild:bas];
+    [bas release];
+    
+    return [ts autorelease];
+}
+
+//根据地图信息创建NPC坦克精灵
++ (NSMutableArray *) tankSpritesForNPC
+{
+    NSMutableArray * tankSpriteArr = [NSMutableArray array];
+    NSArray * tms = [[TankModelManager shareTankModelManager] otherTankModels];
+    for(TankModel * tModel in tms)
+    {
+        CGFloat tankIndex = (NSUInteger)kTankModelTypeDefault *tModel.tankSize.width;
+        TankSprite * ts = [[TankSprite alloc] initWithFile:@"Tank.PNG" 
+                                                      rect:CGRectMake(tankIndex,0,tModel.tankSize.width,tModel.tankSize.height)];
+        ts.tankModel = tModel;
+        
+        
+        
+        RadarSprite * rs = [[RadarSprite alloc] init];
+        rs.radarModel = ts.tankModel.radar;
+        [ts addChild:rs];
+        [rs release];
+        
+        BarrelSprite * bas = [[BarrelSprite alloc] init];
+        bas.barrelModel = ts.tankModel.barrel;
+        [ts addChild:bas];
+        [bas release];
+        
+        [tankSpriteArr addObject:ts];
+    }
+    
+    return tankSpriteArr;
+}
+
 
 //根据坦克的类型创建坦克精灵
 + (id) tankSpriteWithTankModelType:(TankModelType)tankType
@@ -88,18 +143,6 @@
         return YES;
     }
     return NO;
-}
-
-
-
-
-
-
-- (void) setPosition:(CGPoint)position
-{
-    self.tankModel.position = position;
-    
-    [super setPosition:position];
 }
 
 

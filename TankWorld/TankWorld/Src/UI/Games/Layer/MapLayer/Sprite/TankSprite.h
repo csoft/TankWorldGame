@@ -30,6 +30,14 @@
 @property(nonatomic,retain)BarrelSprite *       barrel;
 
 
+
+//根据坦克的类型创建自己控制的坦克精灵
++ (TankSprite *) tankSpriteForMeWithTankModelType:(TankModelType)tankType;
+
+//根据地图信息创建NPC坦克精灵
++ (NSMutableArray *) tankSpritesForNPC;
+
+
 //根据坦克的类型创建坦克精灵
 + (id) tankSpriteWithTankModelType:(TankModelType)tankType;
 
