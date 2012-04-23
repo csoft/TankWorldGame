@@ -18,15 +18,13 @@
     //对打时这个数据是服务器随机产生分配给各个玩家的,单打时在玩家数内随机一个位置
     NSInteger  _meTankIndex;
     
-    //自己坦克默认位置集合
-    NSMutableArray * _meTankDefaultPositionArray;
     
-    //电脑坦克默认位置集合
-    NSMutableArray * _npcTankDefaultPositionArray;
-    
+    //自己控制的坦克
     TankModel * _meTankModel;
     
+    //电脑坦克和联机的坦克的集合
     NSMutableArray * _otherTankModels;
+    
     
 }
 @property(nonatomic,assign)NSInteger  meTankIndex;
@@ -41,10 +39,6 @@
 
 //获取其他的坦克的集合，包括NPC，以及联网的对手的坦克集合
 - (NSArray *)otherTankModels;
-
-
-//根据坦克位置地图的属性字典，初始化自己和电脑坦克位置
-- (void) setupTankPositionWithTankPositionMap:(NSDictionary *) tankPositionMapProperties;
 
 
 //判断指定的坦克是否能按指定角度移动

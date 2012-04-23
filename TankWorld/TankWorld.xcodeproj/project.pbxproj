@@ -165,6 +165,7 @@
 		E49E5AF4153AE10F0005E1C0 /* BarrelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AF3153AE10F0005E1C0 /* BarrelModel.m */; };
 		E49E5AF8153B329D0005E1C0 /* TankModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AF7153B329D0005E1C0 /* TankModelManager.m */; };
 		E49E5AFB153B3B030005E1C0 /* PlistFileEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */; };
+		E4BF8EFC1545BCA5008E1A4E /* TankMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BF8EFB1545BCA5008E1A4E /* TankMapManager.m */; };
 		E4D6206B153C139D00E0EEC7 /* TankModelInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4D6206A153C139D00E0EEC7 /* TankModelInfo.plist */; };
 		E4FA8BE8153ACEF60096891D /* bullet.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BDF153ACEF60096891D /* bullet.PNG */; };
 		E4FA8BE9153ACEF60096891D /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BE0153ACEF60096891D /* enemy.png */; };
@@ -517,6 +518,8 @@
 		E49E5AF7153B329D0005E1C0 /* TankModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankModelManager.m; sourceTree = "<group>"; };
 		E49E5AF9153B3B030005E1C0 /* PlistFileEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistFileEngine.h; sourceTree = "<group>"; };
 		E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistFileEngine.m; sourceTree = "<group>"; };
+		E4BF8EFA1545BCA5008E1A4E /* TankMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankMapManager.h; sourceTree = "<group>"; };
+		E4BF8EFB1545BCA5008E1A4E /* TankMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankMapManager.m; sourceTree = "<group>"; };
 		E4D6206A153C139D00E0EEC7 /* TankModelInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TankModelInfo.plist; sourceTree = "<group>"; };
 		E4FA8BDF153ACEF60096891D /* bullet.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.PNG; sourceTree = "<group>"; };
 		E4FA8BE0153ACEF60096891D /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
@@ -1098,6 +1101,8 @@
 			children = (
 				E49E5AF6153B329D0005E1C0 /* TankModelManager.h */,
 				E49E5AF7153B329D0005E1C0 /* TankModelManager.m */,
+				E4BF8EFA1545BCA5008E1A4E /* TankMapManager.h */,
+				E4BF8EFB1545BCA5008E1A4E /* TankMapManager.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1516,6 +1521,7 @@
 				E5EE07E9153F2E3800A57AFF /* SneakyJoystick.m in Sources */,
 				E5EE07EA153F2E3800A57AFF /* SneakyJoystickSkinnedBase.m in Sources */,
 				E5EE07F6153F2EE200A57AFF /* SneakyExtensions.m in Sources */,
+				E4BF8EFC1545BCA5008E1A4E /* TankMapManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

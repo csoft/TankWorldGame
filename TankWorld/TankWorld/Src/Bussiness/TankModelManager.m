@@ -12,6 +12,7 @@
 #import "RadarModel.h"
 #import "BarrelModel.h"
 #import <math.h>
+#import "TankMapManager.h"
 
 
 @implementation TankModelManager
@@ -85,6 +86,7 @@
 //根据类型获取自己的坦克实体，此实体包含了位置信息
 - (TankModel *) meTankModelWithTankType:(TankModelType)tankType
 {
+    NSMutableArray * _meTankDefaultPositionArray = [TankMapManager shareTankMapManager].meTankDefaultPositionArray;
     NSAssert([_meTankDefaultPositionArray count] > 0,@"需要先初始化坦克位置,自己坦克数量不能少于0");
     
     if(_meTankModel) return _meTankModel;
@@ -101,7 +103,8 @@
 //获取其他的坦克的集合，包括NPC，以及联网的对手的坦克集合
 - (NSArray *)otherTankModels
 {
-    
+ 
+    NSMutableArray * _npcTankDefaultPositionArray = [TankMapManager shareTankMapManager].npcTankDefaultPositionArray;
     NSAssert(_npcTankDefaultPositionArray,@"需要先初始化坦克位置");
     
     if(_otherTankModels) {return _otherTankModels;}
@@ -123,60 +126,6 @@
 
 
 
-//根据坦克位置地图的属性字典，初始化自己和电脑坦克位置
-- (void) setupTankPositionWithTankPositionMap:(NSDictionary *) tankPositionMapProperties
-{
-    
-    //获取自己的坦克可以放置的位置
-    NSInteger meTankNumber = [[tankPositionMapProperties objectForKey:@"MeTankNumber"] intValue];
-    NSAssert(meTankNumber > 0,@"自己坦克数量不能少于0");
-    
-    if(!_meTankDefaultPositionArray)
-    {
-        _meTankDefaultPositionArray = [[NSMutableArray alloc] initWithCapacity:8];
-    }
-    
-    [_meTankDefaultPositionArray removeAllObjects];
-    
-    for(int i = 1;i <= meTankNumber;i++)
-    {
-        NSString * meTank_x = [NSString stringWithFormat:@"MeTank_x%d",i];
-        NSString * meTank_y = [NSString stringWithFormat:@"MeTank_y%d",i];
-        
-        CGPoint meTankPoint = CGPointMake([[tankPositionMapProperties objectForKey:meTank_x] intValue],
-                                          [[tankPositionMapProperties objectForKey:meTank_y] intValue]);
-        
-        [_meTankDefaultPositionArray addObject:[NSValue valueWithCGPoint:meTankPoint]];
-        
-    }
-    
-    //获取电脑坦克可以放置的位置
-    
-    NSInteger npcTankNumber = [[tankPositionMapProperties objectForKey:@"NPCTankNumber"] intValue];
-    
-    if(!_npcTankDefaultPositionArray)
-    {
-        _npcTankDefaultPositionArray = [[NSMutableArray alloc] initWithCapacity:8];
-    }
-    
-    [_npcTankDefaultPositionArray removeAllObjects];
-    
-    for(int i = 1;i <= npcTankNumber;i++)
-    {
-        NSString * npcTank_x = [NSString stringWithFormat:@"NPCTank_x%d",i];
-        NSString * npcTank_y = [NSString stringWithFormat:@"NPCTank_y%d",i];
-        
-        CGPoint npcTankPoint = CGPointMake([[tankPositionMapProperties objectForKey:npcTank_x] intValue],
-                                          [[tankPositionMapProperties objectForKey:npcTank_y] intValue]);
-        
-        [_npcTankDefaultPositionArray addObject:[NSValue valueWithCGPoint:npcTankPoint]];
-        
-    }
-    
-    
-    
-}
-
 //判断指定的坦克是否能按指定角度移动
 - (BOOL) canMoveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle
 {
@@ -189,6 +138,9 @@
 //让指定的坦克按指定角度移动，此函数内部会判断是否能移动，移动的话返回YES，否则NO
 - (BOOL) moveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle
 {
+    
+    
+    
     return YES;
 }
 

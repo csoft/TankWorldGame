@@ -17,6 +17,7 @@
 #import "RadarSprite.h"
 #import "BarrelSprite.h"
 #import "TankModelManager.h"
+#import "TankMapManager.h"
 
 @implementation MapMainLayer
 
@@ -109,12 +110,16 @@
 {
     if(self = [super init])
     {        
+        
+        
+        
         //加载地图
         gameMap = [CCTMXTiledMap tiledMapWithTMXFile:@"defaultTileMap.tmx"];
         [self addChild:gameMap z:0 tag:kTileMapLevelDefault];
         
         //TODO: 此位置要动态获取，使自己的坦克放在指定的位置
 		gameMap.position = CGPointMake(-500, -500);
+        
         
         
 		self.isTouchEnabled = YES;
@@ -126,7 +131,7 @@
         //获取坦克默认放置的位置地图层
         CCTMXLayer* tankPositionLayer = [gameMap layerNamed:@"TankPosition"];
         //初始化坦克位置
-        [[TankModelManager shareTankModelManager] setupTankPositionWithTankPositionMap:(NSDictionary*)[tankPositionLayer properties]];
+        [[TankMapManager shareTankMapManager] setupTankPositionWithTankPositionMap:(NSDictionary*)[tankPositionLayer properties]];
         
         //创建自己控制的坦克
         meTank = [TankSprite tankSpriteForMeWithTankModelType:kTankModelTypeDefault];
