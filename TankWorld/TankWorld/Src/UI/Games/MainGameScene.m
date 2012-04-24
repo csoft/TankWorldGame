@@ -35,6 +35,7 @@
     [self addChild:mmlayer];
     
     ControlMainLayer * cmLayer = [ControlMainLayer node];
+    cmLayer.controllerLayerDelegate = mmlayer;
     [self addChild: cmLayer];
     
 }

@@ -13,6 +13,7 @@
 #import "BarrelModel.h"
 #import <math.h>
 #import "TankMapManager.h"
+#import "DDLog.h"
 
 
 @implementation TankModelManager
@@ -141,6 +142,9 @@
     CGFloat dx = aTankModel.moveSpeed*cos(angle);
     CGFloat dy = aTankModel.moveSpeed*sin(angle);
     
+    
+	DDLogVerbose(@"angle:%0.f old:(%.0f, %.0f) moved: (%.0f, %.0f)", angle,aTankModel.position.x,aTankModel.position.y,dx,dy); 
+    aTankModel.angle = angle;
     aTankModel.position = CGPointMake(aTankModel.position.x+dx, aTankModel.position.y+dy);
     
     return YES;

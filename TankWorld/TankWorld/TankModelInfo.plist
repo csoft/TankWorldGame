@@ -8,7 +8,7 @@
 		<key>TankSize_Height</key>
 		<integer>40</integer>
 		<key>MoveSpeed</key>
-		<integer>10</integer>
+		<real>0.05</real>
 		<key>TurnSpeed</key>
 		<integer>5</integer>
 		<key>LifeValue</key>
