@@ -15,19 +15,23 @@
 #import "RadarSprite.h"
 #import "BarrelModel.h"
 #import "BarrelSprite.h"
+#import "TankWorldConfig.h"
+#import "TankWorldProtocol.h"
+#import "DDLog.h"
 
 @implementation TankSprite
 @synthesize tankModel=_tankModel;
 @synthesize bullet=_bullet;
 @synthesize radar=_radar;
 @synthesize barrel=_barrel;
+@synthesize delegate=_delegate;
+
 
 - (id) init
 {
     if(self = [super init])
     {
-        
-        //:@"Tank.PNG"
+        [self schedule:@selector(updateTheTank:) interval:SPRITE_UPDATE_TIME];
     }
     
     return self;
@@ -129,7 +133,11 @@
     return NO;
 }
 
-
+//坦克根据地图上的目的坐标移动
+- (BOOL) moveWithDestPosition:(CGPoint)aDestPosition
+{
+    return [[TankModelManager shareTankModelManager] moveForTankModel:self.tankModel withDestPosition:aDestPosition];
+}
 
 //坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足
 - (BOOL) tankFireWithTankFireType:(TankFireType) fireType
@@ -145,9 +153,24 @@
     return NO;
 }
 
+- (void) updateTheTank:(ccTime) time
+{
+    
+    if(_isNPC)
+    {
+        self.position = [self.delegate screenPositionWithTilePosition:self.tankModel.position];
+    }
+    
+    
+    
+}
 
 
-
+//激活或者关闭坦克智能系统
+- (void) activeNPCTank:(BOOL) isActive
+{
+    _isNPC = isActive;
+}
 
 
 @end

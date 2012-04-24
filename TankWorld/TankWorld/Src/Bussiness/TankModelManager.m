@@ -138,9 +138,18 @@
 //让指定的坦克按指定角度移动，此函数内部会判断是否能移动，移动的话返回YES，否则NO
 - (BOOL) moveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle
 {
+    CGFloat dx = aTankModel.moveSpeed*cos(angle);
+    CGFloat dy = aTankModel.moveSpeed*sin(angle);
     
+    aTankModel.position = CGPointMake(aTankModel.position.x+dx, aTankModel.position.y+dy);
     
-    
+    return YES;
+}
+
+//坦克根据地图上的目的坐标移动
+- (BOOL) moveForTankModel:(TankModel *)aTankModel withDestPosition:(CGPoint)aDestPosition
+{
+    aTankModel.position = aDestPosition;
     return YES;
 }
 

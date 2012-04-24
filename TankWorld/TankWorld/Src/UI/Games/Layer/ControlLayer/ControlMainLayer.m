@@ -15,7 +15,7 @@
 
 
 @implementation ControlMainLayer
-@synthesize mapMainLayerDelegate = _mapMainLayerDelegate;
+@synthesize controllerLayerDelegate = _controllerLayerDelegate;
 
 -(id) init
 {
@@ -32,7 +32,7 @@
 
 -(void) dealloc
 {
-    _mapMainLayerDelegate = nil;
+    _controllerLayerDelegate = nil;
 	[super dealloc];
 }
 
@@ -82,7 +82,7 @@
 	{
 		nextShotTime = totalTime + 0.5f;
         
-        [_mapMainLayerDelegate tankFireWithTankFireType:kTankFireTypeDefault];
+        [_controllerLayerDelegate tankFireWithTankFireType:kTankFireTypeDefault];
 		//GameScene* game = [GameScene sharedGameScene];
 		//[game shootBulletFromShip:[game defaultShip]];
 	}
@@ -100,8 +100,8 @@
 	CGPoint velocity = ccpMult(joystick.velocity, 200);
 	if (velocity.x != 0 && velocity.y != 0)
 	{
-        CCLOG(@"%@", @"_mapMainLayerDelegate tankMoveWithAngle:joystick.degrees");
-        [_mapMainLayerDelegate tankMoveWithAngle:joystick.degrees];
+        CCLOG(@"%@", @"_controllerLayerDelegate tankMoveWithAngle:joystick.degrees");
+        [_controllerLayerDelegate tankMoveWithAngle:joystick.degrees];
 		//ship.position = CGPointMake(ship.position.x + velocity.x * delta, ship.position.y + velocity.y * delta);
 	}
     

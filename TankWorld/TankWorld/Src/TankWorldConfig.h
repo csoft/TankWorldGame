@@ -9,6 +9,18 @@
 #ifndef __GAME_CONFIG_H
 #define __GAME_CONFIG_H
 
+#define SPRITE_UPDATE_TIME 1.0/30
+
+#define TANK_MAP_UPDATE_TIME 1.0/30
+
+
+
+
+
+
+
+
+
 //
 // Supported Autorotations:
 //		None,

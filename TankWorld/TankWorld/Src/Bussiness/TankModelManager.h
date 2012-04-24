@@ -49,7 +49,8 @@
 //让指定的坦克按指定角度移动，此函数内部会判断是否能移动，移动的话返回YES，否则NO
 - (BOOL) moveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle;
 
-
+//坦克根据地图上的目的坐标移动
+- (BOOL) moveForTankModel:(TankModel *)aTankModel withDestPosition:(CGPoint)aDestPosition;
 
 
 //指定坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足

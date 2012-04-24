@@ -27,10 +27,10 @@
 	ccTime totalTime;
 	ccTime nextShotTime;
     
-    id<MapMainLayerDelegate>        _mapMainLayerDelegate;//地图层委托，用来回调坦克移动和发射炮弹
+    id<ControlMainLayerDelegate>        _controllerLayerDelegate;//控制层委托，用来回调坦克移动和发射炮弹
     
 }
-@property(nonatomic,assign)id<MapMainLayerDelegate>         mapMainLayerDelegate;
+@property(nonatomic,assign)id<ControlMainLayerDelegate>         controllerLayerDelegate;
 
 
 @end

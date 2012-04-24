@@ -18,6 +18,7 @@
 #import "BarrelSprite.h"
 #import "TankModelManager.h"
 #import "TankMapManager.h"
+#import "TankWorldConfig.h"
 
 @implementation MapMainLayer
 
@@ -106,6 +107,13 @@
 
 }
 
+
+- (void)updateTankMap:(ccTime)time
+{
+    [self centerTileMapOnTileCoord:meTank.tankModel.position tileMap:gameMap];
+}
+
+
 - (id) init
 {
     if(self = [super init])
@@ -138,6 +146,7 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         CGPoint screenCenter = CGPointMake(screenSize.width * 0.5f, screenSize.height * 0.5f);
         meTank.position =screenCenter;//自己的坦克固定显示在屏幕中间
+        meTank.delegate = self;
         meTank.tankModel.name = @"me";
         [self addChild:meTank z:0 tag:2];
         
@@ -149,8 +158,13 @@
         {
             tsPrite.position = [self positionFromTilePos:tsPrite.tankModel.position];
             tsPrite.tankModel.name = @"npc";
+            tsPrite.delegate = self;
             [gameMap addChild:tsPrite];
         }        
+        
+        
+        [self schedule:@selector(updateTankMap:) interval:TANK_MAP_UPDATE_TIME];
+        
     }
     return self;
 }
@@ -166,11 +180,30 @@
 }
 
 
+//坦克根据地图上的目的坐标移动
+- (BOOL) tankMoveWithDestPosition:(CGPoint)aDestPosition
+{
+    return [meTank moveWithDestPosition:aDestPosition];
+}
+
+
 //坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足
 - (BOOL) tankFireWithTankFireType:(TankFireType) fireType
 {
     return YES;
 }
+
+
+
+#pragma -
+#pragma SpriteDelegate
+
+//根据地图位置获取屏幕位置
+- (CGPoint) screenPositionWithTilePosition:(CGPoint)tilePos
+{
+    return [self positionFromTilePos:tilePos];
+}
+
 
 
 #pragma mark -
@@ -185,8 +218,10 @@
 	CGPoint touchLocation = [self locationFromTouches:touches];
 	CGPoint tilePos = [self tilePosFromLocation:touchLocation tileMap:tileMap];
     
+    [self tankMoveWithDestPosition:tilePos];
+    //meTank.tankModel.position = tilePos;
 	// move tilemap so that touched tiles is at center of screen
-	[self centerTileMapOnTileCoord:tilePos tileMap:tileMap];
+	//[self centerTileMapOnTileCoord:tilePos tileMap:tileMap];
 }
 
 - (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -198,6 +233,7 @@
 {
     
 }
+
 
 
 

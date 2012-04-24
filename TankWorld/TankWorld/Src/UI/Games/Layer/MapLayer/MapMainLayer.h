@@ -11,7 +11,7 @@
 #import "TankWorldProtocol.h"
 
 @class TankSprite;
-@interface MapMainLayer : CCLayer<MapMainLayerDelegate> 
+@interface MapMainLayer : CCLayer<ControlMainLayerDelegate,SpriteDelegate> 
 {
     
     CCTMXTiledMap *gameMap;//游戏地图
