@@ -1568,6 +1568,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: chen xuebao (YE7L6SH95A)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1576,6 +1577,7 @@
 				INFOPLIST_FILE = TankWorld/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "41187181-0E09-4B1B-A422-E5602E281B45";
 				USER_HEADER_SEARCH_PATHS = "\"TankWorld/libs\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1585,6 +1587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: chen xuebao (YE7L6SH95A)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TankWorld/Prefix.pch;
@@ -1592,6 +1595,7 @@
 				INFOPLIST_FILE = TankWorld/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "41187181-0E09-4B1B-A422-E5602E281B45";
 				USER_HEADER_SEARCH_PATHS = "\"TankWorld/libs\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
