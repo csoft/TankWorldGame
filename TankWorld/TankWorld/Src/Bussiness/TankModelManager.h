@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "TankWorldTypeDef.h"
 
+
 @class TankModel;
+@class BulletModel;
 @interface TankModelManager : NSObject
 {
     NSArray * tankModelConstData;//坦克不一样类型对应的一些固定的数据，和TankModelInfo.plist文件对应
@@ -34,6 +36,8 @@
 
 - (TankModel *) tankModelWithTankType:(TankModelType)tankType;
 
+- (BulletModel *)bulletModelWithTankType:(TankModelType)tankType;
+
 //根据类型获取自己的坦克实体，此实体包含了位置信息
 - (TankModel *) meTankModelWithTankType:(TankModelType)tankType;
 
@@ -54,7 +58,7 @@
 
 
 //指定坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足
-- (BOOL) tankFireForTankModel:(TankModel *)aTankModel  withTankFireType:(TankFireType) fireType;
+- (BulletModel *) tankFireForTankModel:(TankModel *)aTankModel  withTankFireType:(TankFireType) fireType;
 
 
 

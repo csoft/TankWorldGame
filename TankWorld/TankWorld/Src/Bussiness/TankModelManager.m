@@ -64,13 +64,7 @@
     tm.lifeValue = [[dicTankModel objectForKey:@"LifeValue"] floatValue];
     tm.fieldOfView = [[dicTankModel objectForKey:@"FieldOfView"] floatValue];
     
-    NSDictionary * dicBulletModel = [dicTankModel objectForKey:@"BulletModel"];
-    tm.bullet = [[[BulletModel alloc] init] autorelease];
-    tm.bullet.harmValue = [[dicBulletModel objectForKey:@"HarmValue"] floatValue];
-    tm.bullet.liftValue = [[dicBulletModel objectForKey:@"LiftValue"] floatValue];
-    tm.bullet.moveSpeed = [[dicBulletModel objectForKey:@"MoveSpeed"] floatValue];
-    tm.bullet.bulletSize = CGSizeMake([[dicBulletModel objectForKey:@"BulletSize_Width"] floatValue], 
-                                      [[dicBulletModel objectForKey:@"BulletSize_Height"] floatValue]);
+    
         
     NSDictionary * dicRadarModel = [dicTankModel objectForKey:@"RadarModel"];
     tm.radar = [[[RadarModel alloc] init] autorelease];
@@ -82,6 +76,24 @@
     
     return [tm autorelease];
     
+}
+
+
+- (BulletModel *) bulletModelWithTankType:(TankModelType)tankType
+{
+    //去处对应类型的坦克的常数据
+    NSDictionary * dicTankModel = [tankModelConstData objectAtIndex:(NSUInteger)tankType];
+    
+    NSDictionary * dicBulletModel = [dicTankModel objectForKey:@"BulletModel"];
+    BulletModel * bullet = [[BulletModel alloc] init];
+    
+    bullet = [[[BulletModel alloc] init] autorelease];
+    bullet.harmValue = [[dicBulletModel objectForKey:@"HarmValue"] floatValue];
+    bullet.liftValue = [[dicBulletModel objectForKey:@"LiftValue"] floatValue];
+    bullet.moveSpeed = [[dicBulletModel objectForKey:@"MoveSpeed"] floatValue];
+    bullet.bulletSize = CGSizeMake([[dicBulletModel objectForKey:@"BulletSize_Width"] floatValue], 
+                                      [[dicBulletModel objectForKey:@"BulletSize_Height"] floatValue]);
+    return [bullet autorelease];
 }
 
 //根据类型获取自己的坦克实体，此实体包含了位置信息
@@ -160,9 +172,18 @@
 
 
 //指定坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足
-- (BOOL) tankFireForTankModel:(TankModel *)aTankModel  withTankFireType:(TankFireType) fireType
+- (BulletModel *) tankFireForTankModel:(TankModel *)aTankModel  withTankFireType:(TankFireType) fireType
 {
-    return YES;
+    if(aTankModel.bullet)
+    {
+        return nil;
+    }
+    
+    aTankModel.bullet = [self bulletModelWithTankType:fireType];
+    aTankModel.bullet.position = aTankModel.position;
+    aTankModel.bullet.angle = aTankModel.barrel.angle;
+    
+    return aTankModel.bullet;
 }
 
 

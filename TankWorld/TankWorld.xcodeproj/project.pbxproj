@@ -165,6 +165,9 @@
 		E49E5AF4153AE10F0005E1C0 /* BarrelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AF3153AE10F0005E1C0 /* BarrelModel.m */; };
 		E49E5AF8153B329D0005E1C0 /* TankModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AF7153B329D0005E1C0 /* TankModelManager.m */; };
 		E49E5AFB153B3B030005E1C0 /* PlistFileEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */; };
+		E4BE8CEC154ADFB80018974C /* BulletModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BE8CEB154ADFB80018974C /* BulletModelManager.m */; };
+		E4BE8CF0154ADFE20018974C /* RadarModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BE8CEF154ADFE20018974C /* RadarModelManager.m */; };
+		E4BE8CF3154ADFFD0018974C /* BarrelModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BE8CF2154ADFFD0018974C /* BarrelModelManager.m */; };
 		E4BF8EFC1545BCA5008E1A4E /* TankMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BF8EFB1545BCA5008E1A4E /* TankMapManager.m */; };
 		E4D6206B153C139D00E0EEC7 /* TankModelInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4D6206A153C139D00E0EEC7 /* TankModelInfo.plist */; };
 		E4FA8BE8153ACEF60096891D /* bullet.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E4FA8BDF153ACEF60096891D /* bullet.PNG */; };
@@ -518,6 +521,12 @@
 		E49E5AF7153B329D0005E1C0 /* TankModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankModelManager.m; sourceTree = "<group>"; };
 		E49E5AF9153B3B030005E1C0 /* PlistFileEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistFileEngine.h; sourceTree = "<group>"; };
 		E49E5AFA153B3B030005E1C0 /* PlistFileEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistFileEngine.m; sourceTree = "<group>"; };
+		E4BE8CEA154ADFB80018974C /* BulletModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletModelManager.h; sourceTree = "<group>"; };
+		E4BE8CEB154ADFB80018974C /* BulletModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletModelManager.m; sourceTree = "<group>"; };
+		E4BE8CEE154ADFE20018974C /* RadarModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarModelManager.h; sourceTree = "<group>"; };
+		E4BE8CEF154ADFE20018974C /* RadarModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarModelManager.m; sourceTree = "<group>"; };
+		E4BE8CF1154ADFFD0018974C /* BarrelModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrelModelManager.h; sourceTree = "<group>"; };
+		E4BE8CF2154ADFFD0018974C /* BarrelModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrelModelManager.m; sourceTree = "<group>"; };
 		E4BF8EFA1545BCA5008E1A4E /* TankMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankMapManager.h; sourceTree = "<group>"; };
 		E4BF8EFB1545BCA5008E1A4E /* TankMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankMapManager.m; sourceTree = "<group>"; };
 		E4D6206A153C139D00E0EEC7 /* TankModelInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TankModelInfo.plist; sourceTree = "<group>"; };
@@ -1103,6 +1112,12 @@
 				E49E5AF7153B329D0005E1C0 /* TankModelManager.m */,
 				E4BF8EFA1545BCA5008E1A4E /* TankMapManager.h */,
 				E4BF8EFB1545BCA5008E1A4E /* TankMapManager.m */,
+				E4BE8CEA154ADFB80018974C /* BulletModelManager.h */,
+				E4BE8CEB154ADFB80018974C /* BulletModelManager.m */,
+				E4BE8CEE154ADFE20018974C /* RadarModelManager.h */,
+				E4BE8CEF154ADFE20018974C /* RadarModelManager.m */,
+				E4BE8CF1154ADFFD0018974C /* BarrelModelManager.h */,
+				E4BE8CF2154ADFFD0018974C /* BarrelModelManager.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1522,6 +1537,9 @@
 				E5EE07EA153F2E3800A57AFF /* SneakyJoystickSkinnedBase.m in Sources */,
 				E5EE07F6153F2EE200A57AFF /* SneakyExtensions.m in Sources */,
 				E4BF8EFC1545BCA5008E1A4E /* TankMapManager.m in Sources */,
+				E4BE8CEC154ADFB80018974C /* BulletModelManager.m in Sources */,
+				E4BE8CF0154ADFE20018974C /* RadarModelManager.m in Sources */,
+				E4BE8CF3154ADFFD0018974C /* BarrelModelManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

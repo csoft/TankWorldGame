@@ -140,17 +140,18 @@
 }
 
 //坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足
-- (BOOL) tankFireWithTankFireType:(TankFireType) fireType
+- (BulletSprite *) tankFireWithTankFireType:(TankFireType) fireType
 {
-    if([[TankModelManager shareTankModelManager] tankFireForTankModel:self.tankModel withTankFireType:kTankFireTypeDefault])
+    BulletModel * bm = [[TankModelManager shareTankModelManager] tankFireForTankModel:self.tankModel
+                                                                     withTankFireType:kTankFireTypeDefault];
+    if(bm)
     {
-        BulletSprite * bs = [[BulletSprite alloc] init];
-        bs.bulletModel = self.tankModel.bullet;
-        [self addChild:bs];
-        [bs release];
-        return YES;
+        BulletSprite * bs = [[BulletSprite alloc] initWithFile:@"bullet.png" rect:CGRectMake(0, 0, 16, 16)];
+        bs.bulletModel = bm;
+        self.bullet = bs;
+        return [bs autorelease];
     }
-    return NO;
+    return nil;
 }
 
 - (void) updateTheTank:(ccTime) time
@@ -158,13 +159,45 @@
     
     if(_isNPC)
     {
+        //TODO: 智能改变自己的位置
+        
         self.position = [self.delegate screenPositionWithTilePosition:self.tankModel.position];
     }
     
+    if(self.bullet)
+    {
+        //TODO: 计算改变炮弹的位置
+        
+        self.bullet.position = [self.delegate screenPositionWithTilePosition:self.bullet.bulletModel.position];
+        
+        if(self.bullet.bulletModel.liftValue <=0)
+        {//子弹生命结束，开始爆炸动画
+            CCAnimation *animation = [CCAnimation animation];
+            CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage:@"Explode1.png"];
+            for(int i=0; i<8; i++)
+            {
+                CCSpriteFrame * spriteFrame = [CCSpriteFrame frameWithTexture:texture 
+                                                                         rect:CGRectMake(i*23, 0, 23, 23)];
+                [animation addFrame:spriteFrame];
+            }
+            
+            id action = [CCAnimate actionWithAnimation:animation];
+            id callfun = [CCCallFunc actionWithTarget:self selector:@selector(destroyBullet)];
+            [self.bullet runAction:[CCSequence actions:action,callfun, nil]];
+            
+        }
+    }
     
     
 }
 
+- (void) destroyBullet
+{
+    
+    [self.bullet removeFromParentAndCleanup:YES];
+    self.tankModel.bullet = nil;
+    self.bullet = nil;
+}
 
 //激活或者关闭坦克智能系统
 - (void) activeNPCTank:(BOOL) isActive
