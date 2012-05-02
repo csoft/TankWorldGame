@@ -146,10 +146,24 @@
                                                                      withTankFireType:kTankFireTypeDefault];
     if(bm)
     {
-        BulletSprite * bs = [[BulletSprite alloc] initWithFile:@"bullet.png" rect:CGRectMake(0, 0, 16, 16)];
-        bs.bulletModel = bm;
-        self.bullet = bs;
-        return [bs autorelease];
+        if(!_bullet)
+        {
+            BulletSprite * bs = [[BulletSprite alloc] initWithFile:@"bullet.PNG" rect:CGRectMake(0, 0, 16, 16)];
+            bs.delegate = self.delegate;
+            bs.bulletModel = bm;
+            self.bullet = bs;
+            [bs release];
+            
+            [self.delegate addToMapForNode:bs z:100 tag:200];
+            [self.delegate addToMapForNode:bs.explodeSprite z:101 tag:201];
+            
+            
+        }
+        
+        //开火
+        [_bullet fire];
+        
+        return _bullet;
     }
     return nil;
 }
@@ -164,40 +178,41 @@
         self.position = [self.delegate screenPositionWithTilePosition:self.tankModel.position];
     }
     
-    if(self.bullet)
-    {
-        //TODO: 计算改变炮弹的位置
-        
-        self.bullet.position = [self.delegate screenPositionWithTilePosition:self.bullet.bulletModel.position];
-        
-        if(self.bullet.bulletModel.liftValue <=0)
-        {//子弹生命结束，开始爆炸动画
-            CCAnimation *animation = [CCAnimation animation];
-            CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage:@"Explode1.png"];
-            for(int i=0; i<8; i++)
-            {
-                CCSpriteFrame * spriteFrame = [CCSpriteFrame frameWithTexture:texture 
-                                                                         rect:CGRectMake(i*23, 0, 23, 23)];
-                [animation addFrame:spriteFrame];
-            }
-            
-            id action = [CCAnimate actionWithAnimation:animation];
-            id callfun = [CCCallFunc actionWithTarget:self selector:@selector(destroyBullet)];
-            [self.bullet runAction:[CCSequence actions:action,callfun, nil]];
-            
-        }
-    }
+//    if(self.bullet)
+//    {
+// 
+//        if(self.bullet.bulletModel.liftValue <=0)
+//        {//子弹生命结束，开始爆炸动画
+//            
+//            CCAnimation *animation = [CCAnimation animation];
+//
+//            CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage:@"exploBig.png"];
+//            for(int i=0; i<14; i++)
+//            {
+//                CCSpriteFrame * spriteFrame = [CCSpriteFrame frameWithTexture:texture 
+//                                                                         rect:CGRectMake(i*40, 0, 40, 40)];
+//                [animation addFrame:spriteFrame];
+//            }
+//            
+//            
+//            id action = [CCAnimate actionWithAnimation:animation];
+//            ((CCAnimate*)action).duration = 0.1f;
+//            id callfun = [CCCallFunc actionWithTarget:self selector:@selector(destroyBullet)];
+//            [self.bullet.explodeSprite runAction:[CCSequence actions:[CCShow action], action,callfun,[CCDelayTime actionWithDuration:0.2], [CCHide action],nil]];
+//            
+//        }
+//    }
     
     
 }
 
-- (void) destroyBullet
-{
-    
-    [self.bullet removeFromParentAndCleanup:YES];
-    self.tankModel.bullet = nil;
-    self.bullet = nil;
-}
+//- (void) destroyBullet
+//{
+//    //[self.bullet.explodeSprite removeFromParentAndCleanup:YES];
+//    [self.bullet removeFromParentAndCleanup:YES];
+//    self.tankModel.bullet = nil;
+//    self.bullet = nil;
+//}
 
 //激活或者关闭坦克智能系统
 - (void) activeNPCTank:(BOOL) isActive

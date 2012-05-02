@@ -8,12 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "TankWorldProtocol.h"
 
 @class BulletModel;
 @interface BulletSprite : CCSprite 
 {
     BulletModel *       _bulletModel;//炮弹数据实体
+    
+    id<SpriteDelegate>   _delegate;//精灵委托
+    
+    CCSprite * _explodeSprite;//爆炸精灵
 }
 @property(nonatomic,retain)BulletModel *       bulletModel;
+@property(nonatomic,assign)id<SpriteDelegate>   delegate;
+@property(nonatomic,retain)CCSprite * explodeSprite;
+
+
+- (void) fire;
 
 @end

@@ -20,9 +20,9 @@
 			<key>HarmValue</key>
 			<integer>30</integer>
 			<key>LiftValue</key>
-			<integer>300</integer>
+			<integer>8</integer>
 			<key>MoveSpeed</key>
-			<integer>40</integer>
+			<real>0.5</real>
 			<key>BulletSize_Width</key>
 			<integer>10</integer>
 			<key>BulletSize_Height</key>

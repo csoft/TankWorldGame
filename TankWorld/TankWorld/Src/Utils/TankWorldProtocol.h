@@ -31,6 +31,9 @@
 //根据地图位置获取屏幕位置
 - (CGPoint) screenPositionWithTilePosition:(CGPoint)tilePos; 
 
+//把Node加到地图上
+- (void) addToMapForNode:(CCNode*)node z:(NSInteger)z tag:(NSInteger)tag;
+
 @end
 
 

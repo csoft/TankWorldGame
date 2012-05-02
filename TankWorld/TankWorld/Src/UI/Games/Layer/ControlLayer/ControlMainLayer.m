@@ -7,6 +7,7 @@
 //
 
 #import "ControlMainLayer.h"
+#import "TankWorldConfig.h"
 
 @interface ControlMainLayer (PrivateMethods)
 -(void) addFireButton;
@@ -100,7 +101,7 @@
 	if (velocity.x != 0 && velocity.y != 0)
 	{
         CCLOG(@"%@", @"_controllerLayerDelegate tankMoveWithAngle:joystick.degrees");
-        [_controllerLayerDelegate tankMoveWithAngle:-(45+joystick.degrees)*(M_PI/180)];
+        [_controllerLayerDelegate tankMoveWithAngle:changeDegreesToAngle(joystick.degrees)];
 		//ship.position = CGPointMake(ship.position.x + velocity.x * delta, ship.position.y + velocity.y * delta);
 	}
     

@@ -14,6 +14,7 @@
 #import <math.h>
 #import "TankMapManager.h"
 #import "DDLog.h"
+#import "TankWorldConfig.h"
 
 
 @implementation TankModelManager
@@ -89,7 +90,8 @@
     
     bullet = [[[BulletModel alloc] init] autorelease];
     bullet.harmValue = [[dicBulletModel objectForKey:@"HarmValue"] floatValue];
-    bullet.liftValue = [[dicBulletModel objectForKey:@"LiftValue"] floatValue];
+    bullet.maxLiftValue = [[dicBulletModel objectForKey:@"LiftValue"] floatValue];
+    bullet.liftValue = bullet.maxLiftValue;
     bullet.moveSpeed = [[dicBulletModel objectForKey:@"MoveSpeed"] floatValue];
     bullet.bulletSize = CGSizeMake([[dicBulletModel objectForKey:@"BulletSize_Width"] floatValue], 
                                       [[dicBulletModel objectForKey:@"BulletSize_Height"] floatValue]);
@@ -106,9 +108,10 @@
     
     _meTankModel = [[self tankModelWithTankType:tankType] retain];
     _meTankModel.position = [[_meTankDefaultPositionArray objectAtIndex:_meTankIndex] CGPointValue];
-    _meTankModel.angle = M_PI_2;//垂直于X轴
     
-    _meTankModel.barrel.angle = M_PI_2;//垂直于X轴
+    _meTankModel.angle = changeDegreesToAngle(90);//垂直于X轴
+    
+    _meTankModel.barrel.angle = changeDegreesToAngle(90);//垂直于X轴
     
     return _meTankModel;
 }
@@ -128,8 +131,8 @@
     {
         TankModel * tmOther = [self tankModelWithTankType:kTankModelTypeDefault];
         tmOther.position = [[_npcTankDefaultPositionArray objectAtIndex:i] CGPointValue];
-        tmOther.angle = M_PI_2;
-        tmOther.barrel.angle = M_PI_2;//垂直于X轴
+        tmOther.angle = changeDegreesToAngle(90);
+        tmOther.barrel.angle = changeDegreesToAngle(90);//垂直于X轴
         [_otherTankModels addObject:tmOther];
     }
     
@@ -174,16 +177,29 @@
 //指定坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足
 - (BulletModel *) tankFireForTankModel:(TankModel *)aTankModel  withTankFireType:(TankFireType) fireType
 {
+    //fireType参数以后扩展，产生不一样的炮弹。
+    
+    
+    
     if(aTankModel.bullet)
     {
-        return nil;
+        if(aTankModel.bullet.liftValue > 0)
+        {//炮弹已经存在，不产生炮弹
+            return nil;
+        }
     }
-    
-    aTankModel.bullet = [self bulletModelWithTankType:fireType];
+    else
+    {
+        aTankModel.bullet = [self bulletModelWithTankType:fireType];
+        
+    }
+    //炮弹原先消失的，重新赋值产生新炮弹
+    aTankModel.bullet.liftValue = aTankModel.bullet.maxLiftValue;
     aTankModel.bullet.position = aTankModel.position;
     aTankModel.bullet.angle = aTankModel.barrel.angle;
+
+    return aTankModel.bullet; 
     
-    return aTankModel.bullet;
 }
 
 

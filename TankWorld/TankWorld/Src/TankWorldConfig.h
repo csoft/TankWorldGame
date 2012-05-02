@@ -14,7 +14,7 @@
 #define TANK_MAP_UPDATE_TIME 1.0/30
 
 
-
+#define changeDegreesToAngle(degrees)   -(45+(degrees))*(M_PI/180)
 
 
 

@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class BulletModel;
 @interface BulletModelManager : NSObject
 {
     
 }
 
 + (BulletModelManager *)shareBulletModelManager;
+
+
+//移动炮弹
+- (BOOL)moveForBulletModel:(BulletModel *)aBulletModel;
 
 @end

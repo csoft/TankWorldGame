@@ -190,18 +190,14 @@
 //坦克根据发射类型发射炮弹，发射成功返回YES，否则NO，返回失败的原因可能是炮弹不足
 - (BOOL) tankFireWithTankFireType:(TankFireType) fireType
 {
-    BulletSprite *bs = [meTank tankFireWithTankFireType:fireType];
-    if(bs)
-    {
-        [gameMap addChild:bs];
-    }
+    [meTank tankFireWithTankFireType:fireType];
     return YES;
 }
 
 
 
-#pragma -
-#pragma SpriteDelegate
+#pragma mark -
+#pragma mark SpriteDelegate
 
 //根据地图位置获取屏幕位置
 - (CGPoint) screenPositionWithTilePosition:(CGPoint)tilePos
@@ -209,7 +205,14 @@
     return [self positionFromTilePos:tilePos];
 }
 
-
+//把Node加到地图上
+- (void) addToMapForNode:(CCNode*)node z:(NSInteger)z tag:(NSInteger)tag
+{
+    if(node)
+    {
+        [gameMap addChild:node z:z tag:tag];
+    }
+}
 
 #pragma mark -
 #pragma mark Touches Event
