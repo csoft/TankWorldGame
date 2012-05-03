@@ -61,8 +61,8 @@
 	joystick.autoCenter = YES;
 	
 	// Now with fewer directions
-	joystick.isDPad = YES;
-	joystick.numberOfDirections = 8;
+	//joystick.isDPad = YES;
+	//joystick.numberOfDirections = 8;
 	
 	SneakyJoystickSkinnedBase* skinStick = [SneakyJoystickSkinnedBase skinnedJoystick];
 	skinStick.position = CGPointMake(stickRadius * 1.5f, stickRadius * 1.5f);
