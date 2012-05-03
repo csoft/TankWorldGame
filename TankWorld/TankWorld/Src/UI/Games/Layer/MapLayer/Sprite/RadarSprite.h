@@ -16,4 +16,7 @@
 }
 @property(nonatomic,retain)RadarModel *        radarModel;
 
++ (RadarSprite *)radarSpriteWithRadarModel:(RadarModel *)aRadarModel;
+
+
 @end

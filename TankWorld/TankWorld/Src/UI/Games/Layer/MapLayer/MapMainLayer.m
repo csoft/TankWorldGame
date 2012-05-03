@@ -149,7 +149,11 @@
         meTank.position =screenCenter;//自己的坦克固定显示在屏幕中间
         meTank.delegate = self;
         meTank.tankModel.name = @"me";
-        [self addChild:meTank z:0 tag:2];
+        meTank.radar.position = CGPointMake(screenSize.width - 50.0f, screenSize.height - 50.0f);
+        
+        [self addChild:meTank z:TANK_Z_INDEX tag:2];
+        [self addChild:meTank.radar z:RADAR_Z_INDEX];
+        [self addChild:meTank.barrel z:BARREL_Z_INDEX];
         
         [self centerTileMapOnTileCoord:meTank.tankModel.position tileMap:gameMap];
         
@@ -160,7 +164,9 @@
             tsPrite.position = [self positionFromTilePos:tsPrite.tankModel.position];
             tsPrite.tankModel.name = @"npc";
             tsPrite.delegate = self;
-            [gameMap addChild:tsPrite];
+            [gameMap addChild:tsPrite z:TANK_Z_INDEX];
+            [gameMap addChild:tsPrite.barrel z:BARREL_Z_INDEX];
+            [tsPrite activeNPCTank:YES];
         }        
         
         

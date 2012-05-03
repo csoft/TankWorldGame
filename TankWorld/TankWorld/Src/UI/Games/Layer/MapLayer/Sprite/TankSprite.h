@@ -43,7 +43,7 @@
 
 
 //根据坦克的类型创建坦克精灵
-+ (id) tankSpriteWithTankModelType:(TankModelType)tankType;
+//+ (id) tankSpriteWithTankModelType:(TankModelType)tankType;
 
 
 

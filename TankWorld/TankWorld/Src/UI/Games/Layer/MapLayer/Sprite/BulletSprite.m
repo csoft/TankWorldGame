@@ -21,8 +21,6 @@
 {
     if(self = [super init])
     {
-        
-        
         _explodeSprite = [[CCSprite alloc]  initWithFile:@"exploBig.png" rect:CGRectMake(0, 0, 40, 40)];
         _explodeSprite.visible = NO;
         
@@ -31,9 +29,18 @@
     return self;
 }
 
++ (BulletSprite *)bulletSpriteWithBulletModel:(BulletModel *)aBulletModel
+{
+    BulletSprite * bs = [[BulletSprite alloc] initWithFile:@"bullet.PNG" rect:CGRectMake(0, 0, 16, 16)];
+    bs.bulletModel = aBulletModel;
+    
+    return [bs autorelease];
+}
+
+
 - (void)dealloc
 {
-    //[_bulletModel release];
+    [_bulletModel release];
     [_explodeSprite release];
     [super dealloc];
 }

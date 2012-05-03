@@ -23,6 +23,7 @@
 @property(nonatomic,assign)id<SpriteDelegate>   delegate;
 @property(nonatomic,retain)CCSprite * explodeSprite;
 
++ (BulletSprite *)bulletSpriteWithBulletModel:(BulletModel *)aBulletModel;
 
 - (void) fire;
 

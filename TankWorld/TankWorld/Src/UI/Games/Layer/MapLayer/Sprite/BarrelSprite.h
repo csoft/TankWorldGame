@@ -16,4 +16,8 @@
     
 }
 @property(nonatomic,retain)BarrelModel *       barrelModel;
+
+
++ (BarrelSprite *)barrelSpriteWithBarrelModel:(BarrelModel *)aBarrelModel;
+
 @end

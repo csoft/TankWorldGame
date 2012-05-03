@@ -50,15 +50,10 @@
     
     
     
-    RadarSprite * rs = [[RadarSprite alloc] init];
-    rs.radarModel = ts.tankModel.radar;
-    [ts addChild:rs];
-    [rs release];
+    ts.radar = [RadarSprite radarSpriteWithRadarModel:ts.tankModel.radar];
     
-    BarrelSprite * bas = [[BarrelSprite alloc] init];
-    bas.barrelModel = ts.tankModel.barrel;
-    [ts addChild:bas];
-    [bas release];
+    ts.barrel = [BarrelSprite barrelSpriteWithBarrelModel:ts.tankModel.barrel];
+    
     
     return [ts autorelease];
 }
@@ -77,15 +72,10 @@
         
         
         
-        RadarSprite * rs = [[RadarSprite alloc] init];
-        rs.radarModel = ts.tankModel.radar;
-        [ts addChild:rs];
-        [rs release];
+        ts.radar = [RadarSprite radarSpriteWithRadarModel:ts.tankModel.radar];
         
-        BarrelSprite * bas = [[BarrelSprite alloc] init];
-        bas.barrelModel = ts.tankModel.barrel;
-        [ts addChild:bas];
-        [bas release];
+        ts.barrel = [BarrelSprite barrelSpriteWithBarrelModel:ts.tankModel.barrel];
+        
         
         [tankSpriteArr addObject:ts];
     }
@@ -94,43 +84,33 @@
 }
 
 
-//根据坦克的类型创建坦克精灵
-+ (id) tankSpriteWithTankModelType:(TankModelType)tankType
-{
-    TankModel * tModel = [[TankModelManager shareTankModelManager] tankModelWithTankType:tankType];
-    
-    CGFloat tankIndex = (NSUInteger)tankType*tModel.tankSize.width;
-    TankSprite * ts = [[TankSprite alloc] initWithFile:@"Tank.PNG" 
-                                                  rect:CGRectMake(tankIndex,0,tModel.tankSize.width,tModel.tankSize.height)];
-    ts.tankModel = tModel;
-    
-    
-    
-    RadarSprite * rs = [[RadarSprite alloc] init];
-    rs.radarModel = ts.tankModel.radar;
-    [ts addChild:rs];
-    [rs release];
-    
-    BarrelSprite * bas = [[BarrelSprite alloc] init];
-    bas.barrelModel = ts.tankModel.barrel;
-    [ts addChild:bas];
-    [bas release];
-    
-    return [ts autorelease];
-    
-    
-}
+////根据坦克的类型创建坦克精灵
+//+ (id) tankSpriteWithTankModelType:(TankModelType)tankType
+//{
+//    TankModel * tModel = [[TankModelManager shareTankModelManager] tankModelWithTankType:tankType];
+//    
+//    CGFloat tankIndex = (NSUInteger)tankType*tModel.tankSize.width;
+//    TankSprite * ts = [[TankSprite alloc] initWithFile:@"Tank.PNG" 
+//                                                  rect:CGRectMake(tankIndex,0,tModel.tankSize.width,tModel.tankSize.height)];
+//    ts.tankModel = tModel;
+//    
+//    
+//    
+//    ts.radar = [RadarSprite radarSpriteWithRadarModel:ts.tankModel.radar];
+//    
+//    ts.barrel = [BarrelSprite barrelSpriteWithBarrelModel:ts.tankModel.barrel];
+//    [ts addChild:ts.barrel z:BARREL_Z_INDEX];
+//    
+//    return [ts autorelease];
+//    
+//    
+//}
 
 
 //根据角度移动
 - (BOOL) moveWithAngle:(CGFloat)angle
-{
-    if([[TankModelManager shareTankModelManager] canMoveForTankModel:self.tankModel withAngle:angle])
-    {
-        return [[TankModelManager shareTankModelManager] moveForTankModel:self.tankModel withAngle:angle];
-    }
-    
-    return NO;
+{    
+    return [[TankModelManager shareTankModelManager] moveForTankModel:self.tankModel withAngle:angle];
 }
 
 //坦克根据地图上的目的坐标移动
@@ -148,14 +128,11 @@
     {
         if(!_bullet)
         {
-            BulletSprite * bs = [[BulletSprite alloc] initWithFile:@"bullet.PNG" rect:CGRectMake(0, 0, 16, 16)];
-            bs.delegate = self.delegate;
-            bs.bulletModel = bm;
-            self.bullet = bs;
-            [bs release];
+            self.bullet = [BulletSprite bulletSpriteWithBulletModel:bm];
+            self.bullet.delegate = self.delegate;
             
-            [self.delegate addToMapForNode:bs z:100 tag:200];
-            [self.delegate addToMapForNode:bs.explodeSprite z:101 tag:201];
+            [self.delegate addToMapForNode:self.bullet z:BULLET_Z_INDEX tag:200];
+            [self.delegate addToMapForNode:self.bullet.explodeSprite z:BULLET_EXPLOED_Z_INDEX tag:201];
             
             
         }
@@ -178,41 +155,9 @@
         self.position = [self.delegate screenPositionWithTilePosition:self.tankModel.position];
     }
     
-//    if(self.bullet)
-//    {
-// 
-//        if(self.bullet.bulletModel.liftValue <=0)
-//        {//子弹生命结束，开始爆炸动画
-//            
-//            CCAnimation *animation = [CCAnimation animation];
-//
-//            CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage:@"exploBig.png"];
-//            for(int i=0; i<14; i++)
-//            {
-//                CCSpriteFrame * spriteFrame = [CCSpriteFrame frameWithTexture:texture 
-//                                                                         rect:CGRectMake(i*40, 0, 40, 40)];
-//                [animation addFrame:spriteFrame];
-//            }
-//            
-//            
-//            id action = [CCAnimate actionWithAnimation:animation];
-//            ((CCAnimate*)action).duration = 0.1f;
-//            id callfun = [CCCallFunc actionWithTarget:self selector:@selector(destroyBullet)];
-//            [self.bullet.explodeSprite runAction:[CCSequence actions:[CCShow action], action,callfun,[CCDelayTime actionWithDuration:0.2], [CCHide action],nil]];
-//            
-//        }
-//    }
-    
-    
+    self.barrel.position = self.position;
 }
 
-//- (void) destroyBullet
-//{
-//    //[self.bullet.explodeSprite removeFromParentAndCleanup:YES];
-//    [self.bullet removeFromParentAndCleanup:YES];
-//    self.tankModel.bullet = nil;
-//    self.bullet = nil;
-//}
 
 //激活或者关闭坦克智能系统
 - (void) activeNPCTank:(BOOL) isActive

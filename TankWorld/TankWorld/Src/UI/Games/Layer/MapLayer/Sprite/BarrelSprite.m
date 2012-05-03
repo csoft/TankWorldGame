@@ -7,10 +7,18 @@
 //
 
 #import "BarrelSprite.h"
-
+#import "BarrelModel.h"
 
 @implementation BarrelSprite
 @synthesize barrelModel = _barrelModel;
 
++ (BarrelSprite *)barrelSpriteWithBarrelModel:(BarrelModel *)aBarrelModel
+{
+   BarrelSprite *bs = [[BarrelSprite alloc] initWithFile:@"worldmap.jpg" 
+                                                    rect:CGRectMake(0, 0, 20, 20)];
+    bs.barrelModel = aBarrelModel;
+    
+    return [bs autorelease];
+}
 
 @end
