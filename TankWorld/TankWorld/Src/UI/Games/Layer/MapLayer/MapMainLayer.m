@@ -101,6 +101,7 @@
 //根据地图的X，Y，获取屏幕的X,Y位置
 - (CGPoint) positionFromTilePos:(CGPoint)tilePos
 {
+    tilePos.y -= 1;//地图y偏移1才能准确
     CCTMXLayer* groundLayer = [gameMap layerNamed:@"Ground"];
     CGPoint tankWinPos = [groundLayer positionAt:tilePos];
     return tankWinPos;
