@@ -46,7 +46,7 @@
 
 
 //判断指定的坦克是否能按指定角度移动
-- (BOOL) canMoveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle;
+//- (BOOL) canMoveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle;
 
 
 

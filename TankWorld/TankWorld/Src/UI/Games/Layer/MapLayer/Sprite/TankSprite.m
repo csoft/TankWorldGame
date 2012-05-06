@@ -31,6 +31,7 @@
 {
     if(self = [super init])
     {
+        mapManager = [TankMapManager shareTankMapManager];
         [self schedule:@selector(updateTheTank:) interval:SPRITE_UPDATE_TIME];
     }
     
@@ -131,8 +132,8 @@
             self.bullet = [BulletSprite bulletSpriteWithBulletModel:bm];
             self.bullet.delegate = self.delegate;
             
-            [self.delegate addToMapForNode:self.bullet z:BULLET_Z_INDEX tag:200];
-            [self.delegate addToMapForNode:self.bullet.explodeSprite z:BULLET_EXPLOED_Z_INDEX tag:201];
+            [mapManager.gameMap addChild:self.bullet z:BULLET_Z_INDEX tag:200];
+            [mapManager.gameMap addChild:self.bullet.explodeSprite z:BULLET_EXPLOED_Z_INDEX tag:201];
             
             
         }
@@ -152,7 +153,7 @@
     {
         //TODO: 智能改变自己的位置
         
-        self.position = [self.delegate screenPositionWithTilePosition:self.tankModel.position];
+        self.position = [mapManager screenPositionFromTilePosition:self.tankModel.position];
     }
     
     self.barrel.position = self.position;

@@ -11,6 +11,7 @@
 #import "TankWorldProtocol.h"
 
 @class TankSprite;
+@class TankMapManager;
 @interface MapMainLayer : CCLayer<ControlMainLayerDelegate,SpriteDelegate> 
 {
     
@@ -22,6 +23,8 @@
     
     //可运动的最小区域值和最大区域值
     CGPoint playableAreaMin, playableAreaMax;
+    
+    TankMapManager * mapManager;
     
 }
 

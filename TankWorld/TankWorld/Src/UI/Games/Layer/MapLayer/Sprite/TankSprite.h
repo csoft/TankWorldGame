@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "TankWorldTypeDef.h"
 #import "TankWorldProtocol.h"
+#import "TankMapManager.h"
 
 @class BulletSprite;
 @class RadarSprite;
@@ -25,6 +26,8 @@
     id<SpriteDelegate>   _delegate;//精灵委托
     
     BOOL _isNPC;     //是否是智能NPC
+    
+    TankMapManager * mapManager;
 }
 
 @property(nonatomic,retain)TankModel *          tankModel;

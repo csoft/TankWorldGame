@@ -142,25 +142,30 @@
 
 
 
-//判断指定的坦克是否能按指定角度移动
-- (BOOL) canMoveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle
+//判断指定的坦克是否能按指定角度移动,返回可以移动的距离
+- (CGSize) canMoveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle
 {
-    return YES;
+    CGFloat dx = aTankModel.moveSpeed*cos(angle);
+    CGFloat dy = aTankModel.moveSpeed*sin(angle);
+    
+    
+    
+    
+    return CGSizeMake(dx, dy);
 }
-
 
 
 
 //让指定的坦克按指定角度移动，此函数内部会判断是否能移动，移动的话返回YES，否则NO
 - (BOOL) moveForTankModel:(TankModel *)aTankModel withAngle:(CGFloat)angle
 {
-    CGFloat dx = aTankModel.moveSpeed*cos(angle);
-    CGFloat dy = aTankModel.moveSpeed*sin(angle);
     
-    
-	DDLogVerbose(@"angle:%0.f old:(%.0f, %.0f) moved: (%.0f, %.0f)", angle,aTankModel.position.x,aTankModel.position.y,dx,dy); 
+    CGSize dSize = [self canMoveForTankModel:aTankModel withAngle:angle];
+
+	DDLogVerbose(@"angle:%0.f old:(%.0f, %.0f) moved: (%.0f, %.0f)",
+                 angle,aTankModel.position.x,aTankModel.position.y,dSize.width ,dSize.height); 
     aTankModel.angle = angle;
-    aTankModel.position = CGPointMake(aTankModel.position.x+dx, aTankModel.position.y+dy);
+    aTankModel.position = CGPointMake(aTankModel.position.x+dSize.width, aTankModel.position.y+dSize.height);
     
     return YES;
 }

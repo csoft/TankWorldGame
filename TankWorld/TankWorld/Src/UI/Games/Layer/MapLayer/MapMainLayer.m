@@ -38,80 +38,81 @@
 	return [self locationFromTouch:[touches anyObject]];
 }
 
-//根据坐标点返回地图的x,y值
--(CGPoint) tilePosFromLocation:(CGPoint)location tileMap:(CCTMXTiledMap*)tileMap
-{
-	//求出相对位置
-    CGPoint pos = ccpSub(location, tileMap.position);
-	
-	float halfMapWidth = tileMap.mapSize.width * 0.5f;
-	float mapHeight = tileMap.mapSize.height;
-	float tileWidth = tileMap.tileSize.width;
-	float tileHeight = tileMap.tileSize.height;
-	
-    //根据当前的位置求出对应tile的x,y值
-	CGPoint tilePosDiv = CGPointMake(pos.x / tileWidth, pos.y / tileHeight);
-	float mapHeightDiff = mapHeight - tilePosDiv.y;
-	float posX = (int)(mapHeightDiff + tilePosDiv.x - halfMapWidth);
-	float posY = (int)(mapHeightDiff - tilePosDiv.x + halfMapWidth);
-    
-	//地图边界检测
-	posX = MAX(playableAreaMin.x, posX);
-	posX = MIN(playableAreaMax.x, posX);
-	posY = MAX(playableAreaMin.y, posY);
-	posY = MIN(playableAreaMax.y, posY);
-	
-	pos = CGPointMake(posX, posY);
-	
-	CCLOG(@"touch at (%.0f, %.0f) is at tileCoord (%i, %i)", location.x, location.y, (int)pos.x, (int)pos.y);
-	
-	return pos;
-}
+////根据坐标点返回地图的x,y值
+//-(CGPoint) tilePosFromLocation:(CGPoint)location tileMap:(CCTMXTiledMap*)tileMap
+//{
+//	//求出相对位置
+//    CGPoint pos = ccpSub(location, tileMap.position);
+//	
+//	float halfMapWidth = tileMap.mapSize.width * 0.5f;
+//	float mapHeight = tileMap.mapSize.height;
+//	float tileWidth = tileMap.tileSize.width;
+//	float tileHeight = tileMap.tileSize.height;
+//	
+//    //根据当前的位置求出对应tile的x,y值
+//	CGPoint tilePosDiv = CGPointMake(pos.x / tileWidth, pos.y / tileHeight);
+//	float mapHeightDiff = mapHeight - tilePosDiv.y;
+//	float posX = (int)(mapHeightDiff + tilePosDiv.x - halfMapWidth);
+//	float posY = (int)(mapHeightDiff - tilePosDiv.x + halfMapWidth);
+//    
+//	//地图边界检测
+//	posX = MAX(playableAreaMin.x, posX);
+//	posX = MIN(playableAreaMax.x, posX);
+//	posY = MAX(playableAreaMin.y, posY);
+//	posY = MIN(playableAreaMax.y, posY);
+//	
+//	pos = CGPointMake(posX, posY);
+//	
+//	CCLOG(@"touch at (%.0f, %.0f) is at tileCoord (%i, %i)", location.x, location.y, (int)pos.x, (int)pos.y);
+//	
+//	return pos;
+//}
 
+//
+////根据坐标位置移动地图
+//-(void) centerTileMapOnTileCoord:(CGPoint)tilePos tileMap:(CCTMXTiledMap*)tileMap
+//{
+//	
+//    //地图的中心点
+//	CGSize screenSize = [[CCDirector sharedDirector] winSize];
+//	CGPoint screenCenter = CGPointMake(screenSize.width * 0.5f, screenSize.height * 0.5f);
+//	
+//	//获取背景层
+//	CCTMXLayer* layer = [tileMap layerNamed:@"Ground"];
+//	NSAssert(layer != nil, @"Ground layer not found!");
+//	
+//	// internally tile Y coordinates seem to be off by 1, this fixes the returned pixel coordinates
+//	tilePos.y -= 1;
+//	
+//	// get the pixel coordinates for a tile at these coordinates
+//	CGPoint scrollPosition = [layer positionAt:tilePos];
+//	// negate the position for scrolling
+//	scrollPosition = ccpMult(scrollPosition, -1);
+//	// add offset to screen center
+//	scrollPosition = ccpAdd(scrollPosition, screenCenter);
+//	
+//	CCLOG(@"tilePos: (%i, %i) moveTo: (%.0f, %.0f)", (int)tilePos.x, (int)tilePos.y, scrollPosition.x, scrollPosition.y);
+//	
+//	CCAction* move = [CCMoveTo actionWithDuration:0.2f position:scrollPosition];
+//	[tileMap stopAllActions];
+//	[tileMap runAction:move];
+//}
 
-//根据坐标位置移动地图
--(void) centerTileMapOnTileCoord:(CGPoint)tilePos tileMap:(CCTMXTiledMap*)tileMap
-{
-	
-    //地图的中心点
-	CGSize screenSize = [[CCDirector sharedDirector] winSize];
-	CGPoint screenCenter = CGPointMake(screenSize.width * 0.5f, screenSize.height * 0.5f);
-	
-	//获取背景层
-	CCTMXLayer* layer = [tileMap layerNamed:@"Ground"];
-	NSAssert(layer != nil, @"Ground layer not found!");
-	
-	// internally tile Y coordinates seem to be off by 1, this fixes the returned pixel coordinates
-	tilePos.y -= 1;
-	
-	// get the pixel coordinates for a tile at these coordinates
-	CGPoint scrollPosition = [layer positionAt:tilePos];
-	// negate the position for scrolling
-	scrollPosition = ccpMult(scrollPosition, -1);
-	// add offset to screen center
-	scrollPosition = ccpAdd(scrollPosition, screenCenter);
-	
-	CCLOG(@"tilePos: (%i, %i) moveTo: (%.0f, %.0f)", (int)tilePos.x, (int)tilePos.y, scrollPosition.x, scrollPosition.y);
-	
-	CCAction* move = [CCMoveTo actionWithDuration:0.2f position:scrollPosition];
-	[tileMap stopAllActions];
-	[tileMap runAction:move];
-}
-
-//根据地图的X，Y，获取屏幕的X,Y位置
-- (CGPoint) positionFromTilePos:(CGPoint)tilePos
-{
-    tilePos.y -= 1;//地图y偏移1才能准确
-    CCTMXLayer* groundLayer = [gameMap layerNamed:@"Ground"];
-    CGPoint tankWinPos = [groundLayer positionAt:tilePos];
-    return tankWinPos;
-
-}
+////根据地图的X，Y，获取屏幕的X,Y位置
+//- (CGPoint) positionFromTilePos:(CGPoint)tilePos
+//{
+//    tilePos.y -= 1;//地图y偏移1才能准确
+//    CCTMXLayer* groundLayer = [gameMap layerNamed:@"Ground"];
+//    CGPoint tankWinPos = [groundLayer positionAt:tilePos];
+//    return tankWinPos;
+//
+//}
 
 
 - (void)updateTankMap:(ccTime)time
 {
-    [self centerTileMapOnTileCoord:meTank.tankModel.position tileMap:gameMap];
+    [mapManager moveTilePositionToScreenCenter:meTank.tankModel.position];
+    
 }
 
 
@@ -119,11 +120,13 @@
 {
     if(self = [super init])
     {        
-        
-        
+        mapManager = [TankMapManager shareTankMapManager];
         
         //加载地图
-        gameMap = [CCTMXTiledMap tiledMapWithTMXFile:@"defaultTileMap.tmx"];
+        gameMap = mapManager.gameMap;
+        
+        [TankMapManager shareTankMapManager].screenSize = [[CCDirector sharedDirector] winSize];
+        
         [self addChild:gameMap z:0 tag:kTileMapLevelDefault];
         
         //TODO: 此位置要动态获取，使自己的坦克放在指定的位置
@@ -132,15 +135,7 @@
         
         
 		self.isTouchEnabled = YES;
-		const int borderSize = 10;
-		playableAreaMin = CGPointMake(borderSize, borderSize);
-		playableAreaMax = CGPointMake(gameMap.mapSize.width - 1 - borderSize, gameMap.mapSize.height - 1 - borderSize);
-                
-        
-        //获取坦克默认放置的位置地图层
-        CCTMXLayer* tankPositionLayer = [gameMap layerNamed:@"TankPosition"];
-        //初始化坦克位置
-        [[TankMapManager shareTankMapManager] setupTankPositionWithTankPositionMap:(NSDictionary*)[tankPositionLayer properties]];
+       
         
         //创建自己控制的坦克
         meTank = [TankSprite tankSpriteForMeWithTankModelType:kTankModelTypeDefault];
@@ -155,13 +150,14 @@
         [self addChild:meTank.radar z:RADAR_Z_INDEX];
         [self addChild:meTank.barrel z:BARREL_Z_INDEX];
         
-        [self centerTileMapOnTileCoord:meTank.tankModel.position tileMap:gameMap];
+        //[mapManager :meTank.tankModel.position tileMap:gameMap];
         
         //创建电脑坦克和联机的坦克
         otherTanks = [[TankSprite tankSpritesForNPC] retain];
         for(TankSprite * tsPrite in otherTanks)
         {
-            tsPrite.position = [self positionFromTilePos:tsPrite.tankModel.position];
+            
+            tsPrite.position = [mapManager screenPositionFromTilePosition:tsPrite.tankModel.position];
             tsPrite.tankModel.name = @"npc";
             tsPrite.delegate = self;
             [gameMap addChild:tsPrite z:TANK_Z_INDEX];
@@ -206,32 +202,21 @@
 #pragma mark -
 #pragma mark SpriteDelegate
 
-//根据地图位置获取屏幕位置
-- (CGPoint) screenPositionWithTilePosition:(CGPoint)tilePos
-{
-    return [self positionFromTilePos:tilePos];
-}
 
-//把Node加到地图上
-- (void) addToMapForNode:(CCNode*)node z:(NSInteger)z tag:(NSInteger)tag
-{
-    if(node)
-    {
-        [gameMap addChild:node z:z tag:tag];
-    }
-}
+
 
 #pragma mark -
 #pragma mark Touches Event
 
 -(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	CCNode* node = [self getChildByTag:kTileMapLevelDefault];
-	NSAssert([node isKindOfClass:[CCTMXTiledMap class]], @"not a CCTMXTiledMap");
-	CCTMXTiledMap* tileMap = (CCTMXTiledMap*)node;
-    
+//	CCNode* node = [self getChildByTag:kTileMapLevelDefault];
+//	NSAssert([node isKindOfClass:[CCTMXTiledMap class]], @"not a CCTMXTiledMap");
+//	CCTMXTiledMap* tileMap = (CCTMXTiledMap*)node;
+//    
 	CGPoint touchLocation = [self locationFromTouches:touches];
-	CGPoint tilePos = [self tilePosFromLocation:touchLocation tileMap:tileMap];
+    
+	CGPoint tilePos = [mapManager tilePositionFromScreenPosition:touchLocation];
     
     [self tankMoveWithDestPosition:tilePos];
     //meTank.tankModel.position = tilePos;

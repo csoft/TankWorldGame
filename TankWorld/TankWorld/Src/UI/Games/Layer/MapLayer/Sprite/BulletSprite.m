@@ -21,6 +21,7 @@
 {
     if(self = [super init])
     {
+        mapManager = [TankMapManager shareTankMapManager];
         _explodeSprite = [[CCSprite alloc]  initWithFile:@"exploBig.png" rect:CGRectMake(0, 0, 40, 40)];
         _explodeSprite.visible = NO;
         
@@ -55,7 +56,8 @@
 
     [[BulletModelManager shareBulletModelManager] moveForBulletModel:self.bulletModel];
     
-    self.position = [self.delegate screenPositionWithTilePosition:self.bulletModel.position];
+    
+    self.position = [mapManager screenPositionFromTilePosition:self.bulletModel.position];
     
     
     

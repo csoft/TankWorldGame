@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "TankWorldProtocol.h"
+#import "TankMapManager.h"
 
 @class BulletModel;
 @interface BulletSprite : CCSprite 
@@ -18,6 +19,8 @@
     id<SpriteDelegate>   _delegate;//精灵委托
     
     CCSprite * _explodeSprite;//爆炸精灵
+    
+    TankMapManager * mapManager;
 }
 @property(nonatomic,retain)BulletModel *       bulletModel;
 @property(nonatomic,assign)id<SpriteDelegate>   delegate;
